@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Viet dnah gia nha xe</title>
+  <title>Ve Xe Khách</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/font.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <!--  <link rel="stylesheet" type="text/css" href="js/bootstrap-datepicker.js" /> -->
+  <link rel="stylesheet prefetch" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <!-- // Add the new slick-theme.css if you want the default styling -->
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+</head>
+
+<body>
+  <div id="page">
+    <!--popup-->
+    <div class="container">
+    	
+    <div class="wrapper-pop">
+      <div class="title-pop">
+        <img src="images/pop-ico-pen.jpg" alt=""> Viết đánh giá
+        <img class="pop-logo hidden-xs" src="images/pop-logo.jpg" alt="">
+      </div>
+      <div class="pop-content">
+        <form id="busrating" name="busrating" method="post" action="/vi-vn/Review/CreateRouteReview">
+          <input data-val="true" data-val-number="The field BusOperatorId must be a number." id="BusOperatorId" name="BusOperatorId" type="hidden" value="508">
+          <div class="left-col">
+            <div class="nhaxe clearfix">
+              <p>nhà xe <b> Hải Vân </b> </p>
+              <p class="check-input-route">
+                <span>Tuyến đường:</span>
+                <input class="rating-input-item" data-val="true" data-val-number="The field RouteId must be a number." id="RouteId" name="RouteId" type="hidden" value="8087">Mỹ Đình - Bản Phủ </p>
+            </div>
+            <div class="form-nhaxe clearfix">
+              <div class="check-input-date">
+                <span class="fa fa-calendar input-icon hidden-sm"></span>
+                <input id="departDate" name="DateOfJourney" class="departDate txt rating-input-item hasDatepicker" type="text" placeholder="Chọn ngày đi *">
+                <span class="alert-no"></span>
+                <span class="alert-yes"></span>
+              </div>
+              <div class="clearfix"></div>
+              <div class="check-input-name">
+                <span class="fa fa-user input-icon hidden-sm"></span>
+                <input id="firstName" name="FirstName" class="txt rating-input-item" type="text" placeholder="Họ tên *">
+                <span class="alert-no"></span>
+                <span class="alert-yes"></span>
+              </div>
+              <div class="clearfix"></div>
+              <div class="check-input-email">
+                <span class="fa fa-envelope input-icon hidden-sm"></span>
+                <input id="email" name="Email" class="txt rating-input-item" type="text" placeholder="Email: *">
+                <span class="alert-no"></span>
+                <span class="alert-yes"></span>
+              </div>
+              <div class="clearfix"></div>
+              <p>Viết đánh giá (tối thiểu 100 chữ)</p>
+              <div class="check-input-cmt">
+                <span class="fa fa-comment input-icon hidden-sm"></span>
+                <textarea id="comment" class="rating-input-item" name="Comment" placeholder="Chia sẻ những trải nghiệm quý giá của bạn sẽ giúp cho các hành khách khác lựa chọn được chuyến đi tốt nhất."></textarea>
+                <span class="alert-no"></span>
+                <span class="alert-yes"></span>
+              </div>
+            </div>
+          </div>
+          <div class="right-col">
+            <h6 class="hidden-xs" style="text-transform: uppercase;">
+                    <img src="images/pop-ico-danhgia.png" alt="">Đánh giá:
+                </h6>
+            <div class="alert-text">( Vui lòng bấm <img src="images/pop-star-silver.png" alt=""> để đánh giá)</div>
+            <div class="pop-option-rate rate-chuyendi">
+              <span class="alert-yes"></span>
+              <span class="alert-no"></span>
+              <p><span>Tổng quan:</span></p>
+              <div class="pop-point-rate pop-point-rate-item" data-id="OverallRating" style="cursor: pointer; width: 140px;">
+                <img src="images/star-off-icon.png" alt="1" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="2" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="3" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="4" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="5" title="">
+                <input type="hidden" name="OverallRating">
+              </div>
+              <p id="OverallRatingHint" class="RatingHint hidden-sm"></p>
+              <div class="clearfix"></div>
+            </div>
+            <div class="pop-point-rate pop-option-rate rate-chuyendi">
+              <span class="alert-yes"></span>
+              <span class="alert-no"></span>
+              <p><span>Chất lượng:</span></p>
+              <div class="pop-point-rate pop-point-rate-item" data-id="VehicleQualityRating" style="cursor: pointer; width: 140px;">
+                <img src="images/star-off-icon.png" alt="1" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="2" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="3" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="4" title="">&nbsp;
+                <img src="images/star-off-icon.png" alt="5" title="">
+                <input type="hidden" name="VehicleQualityRating">
+              </div>
+              <p id="VehicleQualityRatingHint" class="RatingHint hidden-sm"></p>
+              <div class="clearfix"></div>
+            </div>
+            <div class="pop-option-rate">
+              <span class="alert-yes"></span>
+              <span class="alert-no"></span>
+              <p><span>Đúng giờ:</span></p>
+              <div class="pop-point-rate pop-point-rate-item" data-id="OnTimeRating" style="cursor: pointer; width: 140px;">
+                <img src="images/star-off-icon.png" alt="1" title="">&nbsp;<img src="images/star-off-icon.png" alt="2" title="">&nbsp;<img src="images/star-off-icon.png" alt="3" title="">&nbsp;<img src="images/star-off-icon.png" alt="4" title="">&nbsp;<img src="images/star-off-icon.png" alt="5" title="">
+                <input type="hidden" name="OnTimeRating">
+              </div>
+              <p id="OnTimeRatingHint" class="RatingHint hidden-sm"></p>
+              <div class="clearfix"></div>
+            </div>
+            <div class="pop-option-rate">
+              <span class="alert-yes"></span>
+              <span class="alert-no"></span>
+              <p><span>Thái độ phục vụ:</span></p>
+              <div class="pop-point-rate pop-point-rate-item" data-id="ServiceRating" style="cursor: pointer; width: 140px;">
+                <img src="images/star-off-icon.png" alt="1" title="">&nbsp;<img src="images/star-off-icon.png" alt="2" title="">&nbsp;<img src="images/star-off-icon.png" alt="3" title="">&nbsp;<img src="images/star-off-icon.png" alt="4" title="">&nbsp;<img src="images/star-off-icon.png" alt="5" title="">
+                <input type="hidden" name="ServiceRating">
+              </div>
+              <p id="ServiceRatingHint" class="RatingHint hidden-sm"></p>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="pop-ckb-confirm">
+            <input class="pop-ckb CheckBoxClass" id="condition" type="checkbox">
+            <label id="Label1" for="condition" class="CheckBoxLabelClass">&nbsp;</label>
+            <p>Tôi xác nhận rằng đánh giá này hoàn toàn dựa trên trải nghiệm cá nhân của tôi khi đi chuyến này và tôi không có mối quan hệ cá nhân hay kinh doanh với các hãng xe. Tôi hiểu rằng Vexere hoàn toàn không chấp nhận các đánh giá giả.</p>
+          </div>
+          <a class="btn-danhgia" href="javascript:;" style="text-transform: uppercase;">Gửi Đánh giá</a>
+        </form>
+      </div>
+      <!-- <div class="vxr-loading-overlay">
+        <img style="width: 75px; height: 75px;" src="images/icon_loading.gif">
+      </div> -->
+    </div>
+     </div>
+    <!--end popup-->
+  </div>
+  <!-- JS-->
+  <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+</body>
+
+</html>

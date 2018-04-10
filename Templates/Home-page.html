@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <title>Trang chủ</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/font.css" />
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <!--  <link rel="stylesheet" type="text/css" href="js/bootstrap-datepicker.js" /> -->
+  <link rel="stylesheet prefetch" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <!-- // Add the new slick-theme.css if you want the default styling -->
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <link rel="stylesheet" href="css/jquery-ui.css">
+</head>
+
+<body>
+ <nav class="navbar navbar-default header-blue">
+    <div class="container">
+      <div >
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          <a href="#"><img src="images/easybook-logo.png" class="img-responsive logo" style="display: inline-block;">
+
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="col-md-9 col-sm-12 col-xs-12">
+             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <div class=" menu-top ">
+              <ul class="nav navbar-nav navbar-left ul-menu">
+                <li><a href="#" class="home">Trang chủ </a></li>
+                <li><a href="#" class="home">Kiểm tra vé </a></li>
+                <li><a href="#" class="home">Hủy vé </a></li>
+              </ul>
+            </div>
+          <ul class="nav navbar-nav navbar-right ul-menu">
+            <li>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Đăng nhập <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-fw fa-user"></i> Đăng nhập</a></li>
+                <li><a href="#"><i class="fa fa-fw fa-edit"></i> Đăng ký</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+               <img src="images/flag_vn.jpg" alt="logo" class="vietnam"> <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="countries"><a href="#"><i class="flag flag-sg"></i> Singapore</a></li>
+                <li class="countries"><a href="#"><i class="flag flag-my"></i> Malaysia</a></li>
+                <li class="countries"><a href="#"><i class="flag flag-id"></i> Indonesia</a></li>
+                <li class="countries"><a href="#"><i class="flag flag-th"></i> Thailand</a></li>
+                <li class="countries"><a href="#"><i class="flag flag-vn"></i> Vietnam</a></li>
+                <li class="countries"><a href="#"><i class="flag flag-mm"></i> Myanmar</a></li>
+                <li class="countries"><a href="#"><i class="flag flag-kh"></i> Cambodia</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Ngôn ngữ <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="countries"><a href="#"> English</a></li>
+                <li class="countries"><a href="#"> Việt Nam ✔</a></li>
+                <li class="countries"><a href="#"> 中文</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!--row-->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <section class="main-bg-vn" >
+    <div  class="container">
+      <div class="row">
+        <div class="col-md-12- col-ms-12 col-xs-12">
+          <div id="hot-line">
+          <i class="fa fa-phone"></i>
+          Hotline 1900 63 64 98
+          </div>
+        <div class="teaser">
+          Trang Đặt Vé Online Đường Biển – Đường Bộ Lớn Nhất Tại Đông Nam Á
+          <br>
+          <span>(Singapore, Malaysia, Indonesia, Thái Lan, Brunei, Việt Nam, Myanmar, Campuchia)</span>
+        </div>
+        <div class="htp">
+          <ul>
+            <li><span>1</span>  Tìm kiếm</li>
+            <li><span>2</span>   Đặt</li>
+            <li><span>3</span>   Đi</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+           <div class="search-box">
+        <div class="tab-content">
+          <div class="search-box">
+            <form id="bus-search-box">
+              <div class="row">
+                <div class="col-md-3 col-xs-6">
+                  <div class="form-group has-feedback has-feedback-left">
+                    <label class="control-label">Từ</label>
+                    <input class="form-control" name="">
+                    <i class="glyphicon glyphicon-map-marker form-control-feedback"></i>
+                  </div>
+                </div>
+                <div class="Bus swap hidden-xs hidden-sm">
+                    <div class="form-group">
+                    <a>
+                    <i class="glyphicon glyphicon-resize-horizontal"></i>
+                    </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Đến</label>
+                    <input class="form-control" name="">
+                    <i class="glyphicon glyphicon-map-marker form-control-feedback"></i>
+                  </div>
+                </div>
+                <div class="col-md-2 col-xs-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Ngày khởi hành</label>
+                    <input class="form-control" name="">
+                    <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                  </div>
+                </div>
+                 <div class=" col-md-1 col-xs-6">
+                  <div class="form-group">
+                    <label class="control-label">Số khách</label>
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+               <div class="col-md-2 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-6 col-xs-offset-3">
+            <div class="form-group">
+                <div class="search-btn">
+                    <button class="btn btn-orange" type="submit" value="Submit">Tìm kiếm </button>
+                </div>
+            </div>
+        </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+</section>
+
+  <div id="number-panel">
+    <div class="container">
+      <div >
+        <div class="col col-md-3 col-sm-3 col-xs-6">
+          <p class="num">5.000+</p>
+          <p>Tuyến đường</p>
+        </div>
+        <div class="col col-md-3 col-sm-3 col-xs-6">
+          <p class="num">2.000+</p>
+          <p>Nhà xe</p>
+        </div>
+        <div class="col col-md-3 col-sm-3 col-xs-6">
+          <p class="num">500.000+</p>
+          <p>Vé đã bán</p>
+        </div>
+        <div class="col col-md-3 col-sm-3 col-xs-6">
+          <p class="num">1.000+</p>
+          <p>Đại lý bán vé</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="about-us-pannel">
+    <div class="container">
+      <div >
+        <div class="col-md-6 col-xs-12">
+          <h5 class="h5-text">Tin tức về chúng tôi</h5>
+
+          <div class="jcarousel-wrapper">
+            <div class="jcarousel">
+              <ul class="slide-ja">
+                <li>
+                  <a href="#"><img src="images/bao-fbnc.jpg" alt="Image 1"></a>
+                  <a href="#"> <img src="images/bao-tt.jpg" alt="Image 2"></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/bao-zing.jpg" alt="Image 5"></a>
+                  <a href="#"><img src="images/bao-tt.jpg" alt="Image 2"></a>
+                </li>
+                <li>
+                  <a href="#"> <img src="images/bao-vnexpress.jpg" alt="Image 3"></a>
+                  <a href="#"><img src="images/bao-zing.jpg" alt="Image 5"></a>
+                </li>
+                <li>
+                  <a href="#"> <img src="images/bao-vnn.jpg" alt="Image 4"></a>
+                  <a href="#"><img src="images/bao-vnexpress.jpg" alt="Image 3"></a>
+                </li>
+                <li>
+                  <a href="#"> <img src="images/bao-zing.jpg" alt="Image 5"></a>
+                  <a href="#"><img src="images/bao-tt.jpg" alt="Image 2"></a>
+                </li>
+                <li>
+                  <a href="#"> <img src="images/bao-zing.jpg" alt="Image 5"></a>
+                  <a href="#"><img src="images/bao-tt.jpg" alt="Image 2"></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/bao-vnn.jpg" alt="Image 4"></a>
+                  <a href="#"><img src="images/bao-zing.jpg" alt="Image 5"></a>
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+          </div>
+        </div>
+        <!--col6-->
+        <div class="col-md-6 col-xs-12">
+          <h5 class="h5-text">Giải thưởng</h5>
+          <div class="awards-panel">
+            <p><span class="bold">Giải nhất</span> cuộc thi Startup Việt 2016 của báo Vnexpress </p>
+            <p><span class="bold">Giải nhất</span> cuộc thi Echelon Ignite Vietnam 2014 </p>
+            <p><span class="bold">Giải nhì</span> cuộc thi BSSC Start-up Wheel 2014 </p>
+            <p><span class="bold">Giải ba</span> cuộc thi Nhân Tài Đất Việt 2015 </p>
+            <p><span class="bold">Giải nhì</span> cuộc thi Mekong Bussiness Challenge 2014 </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="skyline hidden-xs hidden-sm">
+
+    <div class="skyline-city">
+      <div class="bus-img">
+
+           <MARQUEE ><img src="images/bus-vxr.png">  </MARQUEE>
+
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="route-search-panel">
+    <div class="container">
+      <div >
+        <h2 class="text-center h2-text col-txt">
+        <span>Đặt vé xe khách các tuyến đường</span>
+        <MARQUEE class="text-run"><b>Nha Trang - Hà Nội - Hồ Chí Minh</b></MARQUEE>
+        <!-- <MARQUEE SCROLLDELAY=10 class="text-run"><b>Cần Thơ</b></MARQUEE>
+        <MARQUEE SCROLLDELAY=20 class="text-run"><b>Hà Nội</b></MARQUEE>
+        <MARQUEE SCROLLDELAY=70 class="text-run"><b>Hồ Chí Minh</b></MARQUEE>
+        <MARQUEE SCROLLDELAY=80 class="text-run">Nam Định</MARQUEE> -->
+        </h2>
+        <div class="clearfix">
+          <ul class="nav nav-tabs clearfix" role="tablist">
+            <li id="lisaigon" role="presentation" class="active"><a href="#saigon" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="false">SÀI GÒN</a></li>
+            <li id="lihanoi" role="presentation" class=""><a href="#hanoi" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="true">HÀ NỘI</a></li>
+            <li id="lidanang" role="presentation" class=""><a href="#danang" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="false">ĐÀ NẴNG</a></li>
+            <li id="linhatrang" role="presentation" class=""><a href="#nhatrang" aria-controls="settings" role="tab" data-toggle="tab" aria-expanded="false">NHA TRANG</a></li>
+            <li id="licantho" role="presentation" class=""><a href="#cantho" aria-controls="settings" role="tab" data-toggle="tab" aria-expanded="false">CẦN THƠ</a></li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <!--saigon-->
+          <div role="tabpanel" class="tab-pane fade active in" id="saigon">
+            <div class="clearfix">
+              <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Hà Nội</span></a>
+                    <span class="price fl">900.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-ha-noi" data-param="129t1241.html" id="dp1496851696961">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                   <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Đà Lạt</span></a>
+                    <span class="price fl">150.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-da-lat-lam-dong" data-param="129t23991.html" id="dp1496851696962">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                   <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Nha Trang</span></a>
+                    <span class="price fl">180.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-nha-trang-khanh-hoa" data-param="129t23591.html" id="dp1496851696963">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                   <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Đà Nẵng</span></a>
+                    <span class="price fl">360.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-da-nang" data-param="129t1151.html" id="dp1496851696964">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                  <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Phnôm Pênh</span></a>
+                    <span class="price fl">200.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-phnom-penh-campuchia" data-param="129t1491181.html" id="dp1496851696965">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+
+                <div class=" pull-right pl0 pr0">
+                  <ul class="routes-list">
+                    <li>
+                      <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Mũi Né</span></a>
+                      <span class="price fl">120.000 ₫/vé</span>
+                      <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-mui-ne-binh-thuan" data-param="129t27071.html" id="dp1496851696966">
+                      <button type="button" class="datepicker">Chọn ngày</button>
+                    </li>
+                    <li>
+                     <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Vũng Tàu</span></a>
+                      <span class="price fl">105.000 ₫/vé</span>
+                      <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-vung-tau-ba-ria-vung-tau" data-param="129t2131.html" id="dp1496851696967">
+                      <button type="button" class="datepicker">Chọn ngày</button>
+                    </li>
+                    <li>
+                      <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Khánh Hòa</span></a>
+                      <span class="price fl">185.000 ₫/vé</span>
+                      <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-khanh-hoa" data-param="129t1321.html" id="dp1496851696968">
+                      <button type="button" class="datepicker">Chọn ngày</button>
+                    </li>
+                    <li>
+                      <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Buôn Ma Thuột</span></a>
+                      <span class="price fl">200.000 ₫/vé</span>
+                      <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-dak-lak" data-param="129t1161.html" id="dp1496851696969">
+                      <button type="button" class="datepicker">Chọn ngày</button>
+                    </li>
+                    <li>
+                      <a href="Thongtinvexe.html"><span class="route fl"><small>Sài Gòn →</small> Rạch Giá - Kiên Giang</span></a>
+                      <span class="price fl">120.000 ₫/vé</span>
+                      <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-sai-gon-di-rach-gia-kien-giang" data-param="129t23741.html" id="dp1496851696970">
+                      <button type="button" class="datepicker">Chọn ngày</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--hanoi-->
+          <div role="tabpanel" class="tab-pane fade " id="hanoi">
+            <div class="clearfix">
+              <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="Thongtinvexe.html"><span class="route fl"><small>Hà Nội →</small> Sài Gòn</span></a>
+                    <span class="price fl">900.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-sai-gon" data-param="124t1291.html" id="dp1496851696971">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Sapa</span></a>
+                    <span class="price fl">260.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-sa-pa-lao-cai" data-param="124t24241.html" id="dp1496851696972">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Lào Cai</span></a>
+                    <span class="price fl">230.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-lao-cai" data-param="124t1381.html" id="dp1496851696973">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Huế</span></a>
+                    <span class="price fl">269.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-thua-thien-hue" data-param="124t1571.html" id="dp1496851696974">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Đà Nẵng</span></a>
+                    <span class="price fl">450.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-da-nang" data-param="124t1151.html" id="dp1496851696975">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+               <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Vinh</span></a>
+                    <span class="price fl">220.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-vinh-nghe-an" data-param="124t24701.html" id="dp1496851696976">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Hải Phòng</span></a>
+                    <span class="price fl">70.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-hai-phong" data-param="124t1271.html" id="dp1496851696977">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Thanh Hóa</span></a>
+                    <span class="price fl">190.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-thanh-hoa" data-param="124t1561.html" id="dp1496851696978">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Quảng Ninh</span></a>
+                    <span class="price fl">80.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-thanh-hoa" data-param="124t1561.html" id="dp1496851696979">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Hà Nội →</small> Hà Giang</span></a>
+                    <span class="price fl">200.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-ha-noi-di-ha-giang" data-param="124t1221.html" id="dp1496851696980">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="danang">
+            <div class="clearfix">
+              <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Thái Bình</span></a>
+                    <span class="price fl">360.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-thai-binh" data-param="115t1541.html" id="dp1496851696981">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Tân Kỳ</span></a>
+                    <span class="price fl">250.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-tan-ky-nghe-an" data-param="115t24661.html" id="dp1496851696982">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Hội An</span></a>
+                    <span class="price fl">80.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-hoi-an-quang-nam" data-param="115t25221.html" id="dp1496851696983">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Huế</span></a>
+                    <span class="price fl">89.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-hue-thua-thien-hue" data-param="115t26471.html" id="dp1496851696984">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Nha Trang</span></a>
+                    <span class="price fl">235.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-nha-trang-khanh-hoa-" data-param="115t23591.html" id="dp1496851696985">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+               <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Sài Gòn</span></a>
+                    <span class="price fl">450.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-sai-gon" data-param="115t1291.html" id="dp1496851696986">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Đắk Lắk</span></a>
+                    <span class="price fl">260.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-dak-lak" data-param="115t1161.html" id="dp1496851696987">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Hà Nội</span></a>
+                    <span class="price fl">350.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-ha-noi" data-param="115t1241.html" id="dp1496851696988">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Quãng Ngãi</span></a>
+                    <span class="price fl">170.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-quang-ngai" data-param="115t1481.html" id="dp1496851696989">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Đà Nẵng →</small> Nghệ An</span></a>
+                    <span class="price fl">230.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-da-nang-di-nghe-an" data-param="115t1411.html" id="dp1496851696990">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Nhatrang-->
+          <div role="tabpanel" class="tab-pane fade" id="nhatrang">
+            <div class="clearfix">
+              <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Sài Gòn</span></a>
+                    <span class="price fl">179.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-sai-gon" data-param="2359t1291.html" id="dp1496851696991">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Cần Thơ</span></a>
+                    <span class="price fl">260.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-can-tho" data-param="2359t1131.html" id="dp1496851696992">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Kon Tum</span></a>
+                    <span class="price fl">190.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-kon-tum" data-param="2359t1341.html" id="dp1496851696993">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Đà Lạt</span></a>
+                    <span class="price fl">109.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-da-lat-lam-dong" data-param="2359t23991.html" id="dp1496851696994">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Đà Nẵng</span></a>
+                    <span class="price fl">235.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-da-nang" data-param="2359t1151.html" id="dp1496851696995">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+                <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Gia Lai</span></a>
+                    <span class="price fl">190.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-gia-lai" data-param="2359t1211.html" id="dp1496851696996">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Vũng Tàu</span></a>
+                    <span class="price fl">210.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-vung-tau-ba-ria-vung-tau" data-param="2359t2131.html" id="dp1496851696997">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Phú Yên</span></a>
+                    <span class="price fl">70.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-phu-yen" data-param="2359t1451.html" id="dp1496851696998">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Phan Thiết</span></a>
+                    <span class="price fl">179.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-phan-thiet-binh-thuan" data-param="2359t2961.html" id="dp1496851696999">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Nha Trang →</small> Quy Nhơn</span></a>
+                    <span class="price fl">110.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-nha-trang-khanh-hoa-di-qui-nhon-binh-dinh" data-param="2359t2681.html" id="dp1496851697000">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--cantho-->
+          <div role="tabpanel" class="tab-pane fade" id="cantho">
+            <div class="clearfix">
+              <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Sài Gòn</span></a>
+                    <span class="price fl">90.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-sai-gon" data-param="113t1291.html" id="dp1496851697001">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Nha Trang</span></a>
+                    <span class="price fl">260.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-nha-trang-khanh-hoa" data-param="113t23591.html" id="dp1496851697002">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Cà Mau</span></a>
+                    <span class="price fl">120.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-ca-mau" data-param="113t1121.html" id="dp1496851697003">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Đà Nẵng</span></a>
+                    <span class="price fl">630.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-da-nang" data-param="113t1151.html" id="dp1496851697004">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Đà Lạt</span></a>
+                    <span class="price fl">320.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-da-lat-lam-dong" data-param="113t23991.html" id="dp1496851697005">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+                <div class="col-md-12 pull-left pl0 pr0">
+                <ul class="routes-list">
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Vũng Tàu</span></a>
+                    <span class="price fl">100.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-vung-tau-ba-ria-vung-tau" data-param="113t2131.html" id="dp1496851697006">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> An Giang</span></a>
+                    <span class="price fl">50.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-an-giang" data-param="113t111.html" id="dp1496851697007">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Bến Tre</span></a>
+                    <span class="price fl">68.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-ben-tre" data-param="113t171.html" id="dp1496851697008">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                  <li>
+                    <a href="#"><span class="route fl"><small>Cần Thơ →</small> Rạch Giá</span></a>
+                    <span class="price fl">110.000 ₫/vé</span>
+                    <input class="input-txt selectDate hasDatepicker" type="hidden" data-url="/vi-VN/ve-xe-khach-tu-can-tho-di-rach-gia-kien-giang" data-param="113t23741.html" id="dp1496851697009">
+                    <button type="button" class="datepicker">Chọn ngày</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--row-->
+    </div>
+    <!--container-->
+  </div>
+  <!--chonngay-->
+  <div id="bus-network" class="clearfix ">
+    <div class="container">
+      <div >
+        <div class="text-bus clearfix">
+          <div class="col-xs-12 col-sm-12 col-md-12 ">
+            <h2 class="fl-l h2-text col-txt">Mạng lưới nhà xe</h2>
+            <span class="span-text fl-r">Hơn 1000 nhà xe và bến xe khắp Việt Nam</span>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12 col-sm-12">
+          <div class="slider lazy">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/nx-1.jpg" class="img-responsive" alt="Hãng xe Thuận Tiến">
+                </div>
+              </a>
+              <span class="title"><a href="#">Hãng xe Thuận Tiến </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/quocbao.jpg" class="img-responsive" alt="Hãng xe">
+                </div>
+              </a>
+              <span class="title"><a href="#">Hãng xe Quốc Bảo </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/hoangha.jpg" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Hãng xe Hoàng Hà </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/hoanglong.jpg" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Hãng xe Hoàng Long </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/hoangha.jpg" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Hãng xe Hoàng Hà </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/hoanglong.jpg" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Hãng xe Hoàng Long </a></span>
+            </div>
+            <!--1-->
+          </div>
+        </div>
+        </div>
+        <div >
+          <div class="text-bus clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-12 ">
+              <h2 class="fl-l h2-text col-txt">Bến xe khách</h2>
+              <span class="span-text fl-r">Hàng chục bến xe trải khắp Bắc - Trung - Nam</span>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-ms-12">
+
+          <div class="slider lazy ">
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/1.jpg" class="img-responsive" alt="Hãng xe">
+                </div>
+              </a>
+              <span class="title"><a href="#">Bến Xe Khách Giáp Báp </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/2.png" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Bến Xe Khách Miền Đông </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/3.jpg" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Bến Xe Khách Mỹ Đình</a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/4.png" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Bến Xe Khách Trung Tâm Đà Nẵng </a></span>
+            </div>
+            <!--1-->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <a href="#">
+                <div class="slick-overlay">
+                  <p class="bt-info">Xem thêm</p>
+                  <img src="images/5.jpg" class="img-responsive" alt="anh1">
+                </div>
+              </a>
+              <span class="title"><a href="#">Bến Xe Khách Gia Lâm</a></span>
+            </div>
+            <!--1-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--network-->
+    <div id="news-panel" class="hidden-sm hidden-xs">
+      <div class="container">
+        <div >
+          <div class="col-md-6">
+            <div id="news" class="content-box fl-l">
+              <h4 class="h3-tt multilanguage" data-key="tintuc">Tin tức</h4>
+              <div class="news-ctn clearfix">
+                <p class="news-tt">
+                  <em class="date">07.06.2017</em> - <a href="#">NHÀ XE SAO VIỆT TẶNG VÉ MIỄN PHÍ CHO BỆNH NHÂN KHÓ KHĂN LÀO CAI, SAPA</a>
+                </p>
+                <p class="news-tt">
+                  <em class="date">07.06.2017</em> - <a href="#">XE SÀI GÒN ĐI NHA TRANG: DANH SÁCH CÁC NHÀ XE KHUYẾN MÃI LỚN</a>
+                </p>
+                <p class="news-tt">
+                  <em class="date">07.06.2017</em> - <a href="#">XE CÁT BÀ EXPRESS: KHUYẾN MÃI 45% TUYẾN HÀ NỘI ĐI CÁT BÀ </a>
+                </p>
+                <p class="news-tt">
+                  <em class="date">07.06.2017</em> - <a href="#">VÉ XE RẺ ĐI NHA TRANG MÙA FESTIVAL BIỂN 2017</a>
+                </p>
+              </div>
+              <div class="link-ctn clearfix">
+                <a class="more fl-r multilanguage" href="#" data-key="xemthem">Xem thêm</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4 class="h3-tt">Khách hàng nói về chúng tôi</h4>
+            <div >
+              <div class="col-md-12">
+                <p class="p-text">Dịch vụ đặt mua vé xe trực tuyến tại VeXeRe.com thật tuyệt vời, tôi thấy thậm chí đặt chỗ mua vé máy bay còn không được chọn chỗ ngồi như vậy. Bây giờ tôi không còn phải đi lại xếp hàng mua vé tại bến xe nữa, chỉ cần cầm mã vé qua SMS và email là đã có thể lên xe rồi. Cảm ơn VeXeRe.com.</p>
+                <div class="text-center posi-text">
+                  <hr class="customer-divider">
+                  <img class="img-circle customer-avatar" src="images/Vancakova.jpg">
+                  <p>Nguyễn Lan Tường Vy</p>
+                  <div class="user">
+                    <b class="b-tt">Đánh giá khách hàng về VeXeRe.com</b>
+                    <ul class="list-inline pull-left rate-star" data-value="48">
+                      <li><i class="glyphicon glyphicon-star text-yellow"></i></li>
+                      <li><i class="glyphicon glyphicon-star text-yellow"></i></li>
+                      <li><i class="glyphicon glyphicon-star text-yellow"></i></li>
+                      <li><i class="glyphicon glyphicon-star text-yellow"></i></li>
+                      <li><i class="glyphicon glyphicon-star text-yellow"></i></li>
+                    </ul>
+                    <b class="b-tt col-text">4.8/597 Đánh giá</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--tintuc-->
+    <div id="backLinkDiv" class="back-links odd-row clearfix hidden-xs hidden-sm">
+      <div class="container">
+        <div class="clearfix row">
+          <div class="col-md-8 col-lg-8 pr0">
+            <h3>Hãng xe khách</h3>
+          </div>
+          <div class="col-md-4 col-lg-4 pr0">
+            <h3>Bến xe khách</h3>
+          </div>
+        </div>
+        <!--Dang sua-->
+        <div class="clearfix row">
+          <div class="col-lg-2  col-md-2 pr0">
+            <ul id="transporters">
+              <!-- Có liên kết bán vé -->
+              <li><a href="#">Xe Hiếu Hoa </a></li>
+              <li><a href="#">Xe Hoàng Khải </a></li>
+              <li><a href="#">Xe Hoàng Long </a></li>
+              <li><a href="#">Xe Hoàng Nhân </a></li>
+              <li><a href="#">Xe Hưng Long </a></li>
+              <li><a href="#">Xe Huỳnh Gia </a></li>
+              <li><a href="#">Xe Hòa Thuận Anh </a></li>
+              <li><a href="#">Xe Camel Travel </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2  col-md-2 pr0">
+            <ul>
+              <li><a href="#">Xe Sao Việt </a></li>
+              <li><a href="#">Xe Sapa Express </a></li>
+              <li><a href="#">Xe Thành Công </a></li>
+              <li><a href="#">Xe Phúc Xuyên </a></li>
+              <li><a href="#">Xe Phúc Thuận Thảo </a></li>
+              <li><a href="#">Xe Thuận Tiến </a></li>
+              <li><a href="#">Xe Năm Rùm </a></li>
+              <li><a href="#">Xe Phương Heng </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2  col-md-2 pr0">
+            <ul>
+              <li><a href="#">Xe Mai Linh </a></li>
+              <li><a href="#">Xe Liên Hưng </a></li>
+              <li><a href="#">Xe Phương Trang </a></li>
+              <li><a href="#">Xe Xe Nhà </a></li>
+              <li><a href="#">Xe Kumho Samco </a></li>
+              <li><a href="#">Xe Kim Hoàng </a></li>
+              <li><a href="#">Xe Quê Hương Phan Rang </a></li>
+              <li><a href="#">Xe Hoàng Anh - Phan Rang </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2  col-md-2 pr0">
+            <ul>
+              <li><a href="#">Xe Tiến Oanh </a></li>
+              <li><a href="#">Xe Tuyết Hon </a></li>
+              <li><a href="#">Xe Hà Linh </a></li>
+              <li><a href="#">Xe Inter Bus Lines </a></li>
+              <li><a href="#">Xe Hoa Mai </a></li>
+              <li><a href="#">Xe Thành Bưởi </a></li>
+              <li><a href="#">Xe Pumpkin Limousine </a></li>
+              <li><a href="#">Xe Mekong Express </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2  pr0">
+            <ul>
+              <li><a href="#">Bến xe Miền Đông </a></li>
+              <li><a href="#">Bến xe Miền Tây </a></li>
+              <li><a href="#">Bến xe An Sương </a></li>
+              <li><a href="#">Bến xe Mỹ Đình </a></li>
+              <li><a href="#">Bến xe Nước Ngầm </a></li>
+              <li><a href="#">Bến xe Tam Bạc </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-2  pr0">
+            <ul>
+              <li><a href="#">Bến xe Giáp Bát </a></li>
+              <li><a href="#">Bến xe Lương Yên </a></li>
+              <li><a href="#">Bến xe 91B Cần Thơ </a></li>
+              <li><a href="#">Bến xe TT Đà Nẵng </a></li>
+              <li><a href="#">Bến xe Đà Nẵng </a></li>
+              <li><a href="#">Bến xe Cầu Rào </a></li>
+              <li><a href="#">Bến xe Niệm Nghĩa </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="footer-1">
+          <div class="clearfix row">
+            <div class="col-md-12 col-lg-12 pr0">
+              <h3>Đặt mua vé xe các tuyến đường phổ biến</h3>
+            </div>
+          </div>
+          <div class="clearfix row">
+            <div class="col-md-4 col-lg-4 pr0">
+              <ul>
+                <li><a href="#">Vé xe Sài Gòn - Mũi Né</a></li>
+                <li><a href="#">Vé Hà Nội - Tam Cốc Bích Động</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-lg-4 pr0">
+              <ul>
+                <li><a href="#">Vé xe Hà Nội - Tràng An Bái Đính</a></li>
+                <li><a href="#">Vé Hà Nội - Phong Nha Quảng Bình</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-lg-4 pr0">
+              <ul>
+                <li><a href="#">Vé xe Hà Nội - Cát Bà Hải Phòng</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div id="footer">
+    <div class="container">
+      <div class="row contentfooter">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <h4>Về chúng tôi</h4>
+          <ul class="footer-links">
+            <li><a href="/vi-VN/tin-tuc">Tin tức</a></li>
+            <li><a rel="nofollow" href="/vi-VN/gioi-thieu.html">Xe khách</a></li>
+            <li><a rel="nofollow" href="/vi-VN/lien-he.html">Liên hệ</a></li>
+            <li><a href="/vexetet">Vé Xe Tết 2018</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <h4>Hỗ trợ</h4>
+          <ul class="footer-links">
+            <li><a rel="nofollow" href="/vi-VN/huong-dan-thanh-toan-tren-website.html">Hướng dẫn thanh toán</a></li>
+            <li><a rel="nofollow" href="/vi-VN/quy-che.html">Quy chế VeXeRe.com</a></li>
+            <li><a rel="nofollow" href="/vi-VN/nhung-cau-hoi-thuong-gap.html">Những câu hỏi thường gặp</a></li>
+            <li><a href="/vi-vn/phan-mem-quan-ly-ban-ve-xe-khach-vexere.html">Phần mềm quản lý bán vé xe khách VBMS</a></li>
+            <li><a href="/">Đặt vé xe khách trực tuyến</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <h4>Kết nối</h4>
+          <div class="social col-08 clearfix">
+            <a class="social-icon fb" rel="nofollow" title="Facebook" href="https://www.facebook.com/Vexere" target="_blank">Facebook</a>
+            <a class="social-icon yt" rel="nofollow" title="Youtube" href="http://www.youtube.com/channel/UCyUfbHAH0X_CXF4n2Zg2WSA" target="_blank">Youtube</a>
+            <a class="social-icon google-plus" rel="nofollow" title="Google+" href="https://plus.google.com/b/114193555551619053500/+VexereVN/posts?gmbpt=true&amp;hl=en" target="_blank">Google+</a>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <h4>Đối tác</h4>
+          <ul class="ul-user">
+            <li><a target="_blank" href="http://csip.vn/" rel="nofollow"><img src="images/logo-csip.png" "=""></a></li>
+            <li> <a target="_blank" href="http://bssc.vn/" rel="nofollow"><img src="images/logo-bssc.png" "=""></a></li>
+            <li> <a target="_blank" href="http://shtpic.org/" rel="nofollow"><img src="images/logo-shtp-ic.png" "=""></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="copyright-panel">
+        <div class="col-md-8 col-xs-12 footer-info-panel">
+          <div class="left-img">
+            <a itemprop="url" class="footer-logo" href="/" title="Cổng thông tin vé xe khách lớn nhất Việt Nam">
+              <img itemprop="logo" src="images/icon-vxr.svg" alt="" class="logo-1 img-responsive">
+            </a>
+          </div>
+          <p>Bản quyền © 2017 thuộc về <span itemprop="name">VeXeRe.Com</span></p>
+          <p>
+            Tên công ty: CÔNG TY CỔ PHẦN VEXERE
+            <br> Địa chỉ đăng ký kinh doanh: 8C Chữ Đồng Tử, Phường 7, Quận Tân Bình, Thành Phố Hồ Chí Minh, Việt Nam
+          </p>
+          <div class="text-p1">
+            <p>
+              Địa chỉ:
+              <a href="#" title="Xem bản đồ" target="_blank"><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">Lầu M, Khu B, Tòa nhà Sài Gòn Town, 83/16 Thoại Ngọc Hầu, Phường Hòa Thạnh</span>, <span itemprop="addressLocality">Quận Tân Phú</span>, <span itemprop="addressRegion">TP. Hồ Chí Minh</span>, <span itemprop="addressCountry">Việt Nam</span></span></a>
+              <br> Giấy chứng nhận ĐKKD số 0312387105 do Sở KH&amp; ĐT TP. Hồ Chí Minh cấp lần đầu ngày 25/7/2013
+            </p>
+          </div>
+          <!-- Start Mixpanel Partner -->
+          <div style="float: left">
+            <a href="#" rel="nofollow">
+              <img src="images/badge_light.png" alt="Mobile Analytics" style="width: 1px">
+            </a>
+          </div>
+          <!-- End Mixpanel Partner -->
+        </div>
+        <div class="col-md-4 col-xs-12 certificate-panel">
+          <div class="col-md-6 col-sm-3 col-xs-4">
+            <img src="images/certificate0.png" class="img-responsive">
+          </div>
+          <div class="col-md-6  col-sm-3 col-xs-4">
+            <img src="images/certificate1.png" class="img-responsive">
+          </div>
+          <div class="col-md-6 col-sm-3 hidden-xs" >
+            <a href="#">
+              <img src="images/certificate2.png" class="img-responsive">
+            </a>
+          </div>
+          <div class="col-md-6 col-sm-3 col-xs-4">
+            <a href="#">
+              <img src="images/certificate3.png" class="img-responsive">
+            </a>
+          </div>
+        </div>
+        <!-- End Copyright -->
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.min.js "></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="js/starwarsjs.js"></script>
+    <script src="js/bootstrap.js "></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <script src="js/jquery.jcarousel.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jcarousel.responsive.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+   <script language="javascript" src="js/home.js "></script>
+</body>
+
+</html>

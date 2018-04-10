@@ -1,0 +1,423 @@
+ @extends('')
+@section('contents')
+ <!--  TRANG THONG TIN VE XE -->
+  <header id="header">
+    <div class="container">
+      <div class="row header-row">
+        <div class="col-md-12 col-sm-12 col-xs-12 mt10 date-container ">
+          <h6 class="mt0 route-title hidden-sm hidden-xs route-title-bus-ticket">
+                            <span class="mt0 mb0 text-gray"><a href="/">Vé xe khách</a>  &gt; <a href="#">Xe khách từ Sài Gòn  đi  Hà Nội</a> </span>
+
+                    </h6>
+          <input id="routeName" type="hidden" value="Sài Gòn - Hà Nội">
+          <h1 class="title-text-route">
+                        <span class="hidden-xs hidden-sm">Vé xe từ</span>   Sài Gòn  <i class="pl5 pr5 text-gray left-arrow">→</i>  Hà Nội
+                    </h1>
+          <div class="date-picker-nav hidden-md hidden-lg text-center">
+            <div class="btn-group btn-group-xs" role="group">
+              <button id="btPrevDate" type="button" class="btn btn-default"><img class="img-change-date" src="images/icon-previous.png"></button>
+              <input type="button" id="span-current-date" value="12-06-2017" tabindex="1" class="btn btn-vxr current-date hasDatepicker">
+              <button id="btNextDate" type="button" class="btn btn-default"><img class="img-change-date" src="images/icon-next.png"></button>
+            </div>
+          </div>
+          <div class="pull-left ml10 modify-container hidden-lg hidden-md hidden-sm">
+            <a id="btModify" class="text-blue" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="dvSearchTicket" class="ticket-search-filter ">
+    <div class="container desktop-route-search hidden-xs">
+      <form id="searchForm" class="form-inline">
+        <input type="hidden" id="search-busoperator-id" value="0">
+        <input type="hidden" id="search-busoperator-name">
+        <div class="form-group">
+          <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+          <input onfocus="this.select();" onmouseup="return false;" id="departPlace" name="departPlace" type="text" value="Sài Gòn" class="input-txt place ui-autocomplete-input location-search" placeholder="Gõ vào tỉnh đi" accesskey="1" tabindex="1" autocomplete="off">
+          <input type="hidden" id="start-point-type" value="1">
+          <input type="hidden" id="start-point-id" value="29">
+        </div>
+        <div class="form-group hidden-xs">
+          <a href="#" class="switchButton">⇌</a>
+        </div>
+        <div class="form-group">
+          <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+          <input onfocus="this.select();" onmouseup="return false;" id="destination" name="destination" type="text" value="Hà Nội" class="input-txt place ui-autocomplete-input location-search" placeholder="Gõ vào tỉnh đến" accesskey="2" tabindex="2" autocomplete="off">
+          <input type="hidden" id="stop-point-type" value="1">
+          <input type="hidden" id="stop-point-id" value="24">
+        </div>
+        <div class="form-group departDate-fg">
+          <i class="fa fa-caret-left" id="mbtPrevDate"></i>
+          <i class="fa fa-caret-right" id="mbtNextDate"></i>
+          <input id="departDate" readonly="" name="departDate" type="text" class="input-txt date calendar-search hasDatepicker" placeholder="Chọn ngày đi" accesskey="1" tabindex="3" value="12-06-2017">
+          <div class="form-group quick-date-select fr hidden-xs hidden-sm">
+            <button type="button" class="fl btn btn-gray btn-today" onclick="$('#departDate').val(moment().format('DD-MM-YYYY'));">Hôm nay</button>
+            <button type="button" class="fl btn btn-gray btn-tomorrow" onclick="$('#departDate').val(moment(moment().add('days', 1)).format('DD-MM-YYYY'))">
+              Ngày mai
+            </button>
+          </div>
+        </div>
+        <div class="form-group pull-right center-m">
+          <button id="searchSubmit-1" name="searchSubmit" type="submit" class="submit-btn btn  search-btn" tabindex="4">
+            Tìm Vé Xe Rẻ
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="mobi-display hidden-ms">
+    </div>
+  </div>
+  <div id="dvSearchFilter" class="dvSearchFilter col-12 col-md-12 col-xs-12">
+    <div class="container filter-container ">
+      <table class="table filter-table table-noborder mb0 hidden-xs ">
+        <tbody>
+          <tr>
+            <td class="pl0 td-bus-operater-filter operater-filter ">
+              Hãng xe
+            </td>
+            <td class="hidden-xs ">
+              <span class="operater-filter ">Giờ đi</span>
+              <i id="departure-time " class="fa fa-sort-desc vt from-time-sort-i "></i>
+            </td>
+            <td class="hidden-xs operater-filter ">
+              Nơi đi
+            </td>
+            <td class="hidden-xs operater-filter ">
+              Nơi đến
+            </td>
+            <td class="hidden-xs operater-filter ">
+              Loại xe
+            </td>
+            <td class="hidden-xs operater-filter ">
+              Tiện ích
+            </td>
+            <td class="td-rate-filter giave-order ">
+              <a id="rateFilter " class="mr10 ">Đánh giá</a> <i class="fa fa-sort-desc vt rate-sort-i "></i>
+            </td>
+            <td class="td-fare-filter giave-order ">
+              <a id="fareFilter " class="mr10 ">Giá vé</a> <i class="fa fa-sort-desc vt fare-sort-i "></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="visible-xs filter-mobile-header ">
+        <li id="li-departure-time "><a href="# ">Giờ chạy</a><i class="fa fa-sort-desc vt from-time-sort-i "></i></li>
+        <li id="li-rating "><a href="# ">Đánh giá</a><i class="fa fa-sort-desc vt rate-sort-i "></i></li>
+        <li id="li-fare "><a href="# ">Giá vé</a> <i class="fa fa-sort-desc vt fare-sort-i "></i></li>
+        <li id="li-filter "><a href="# ">Lọc</a></li>
+      </ul>
+    </div>
+  </div>
+  <section class="searchResults ">
+    <div id="main " class="container ">
+      <!-- <div class="bus-content "> -->
+      <table class="table result-list ">
+        <tbody>
+          <tr class="schedule-ticket result-item product_box col-12 col-md-12 col-xs-12 ">
+            <td class="col-2 col-md-2 col-xs-2 pl0 " style="z-index: 1; ">
+              <div class="pull-left ml10 comp-name-container ">
+                <h6 class="mt0 mb10 comp-name-title text-gray3 ">Hoàng Long</h6>
+                <div class="col-lg-12 service-plus-in hidden-xs ">
+                  <img src="images/wifi.svg ">
+                  <img src="images/Water.svg ">
+                </div>
+              </div>
+            </td>
+            <td class=" col-4 col-md-4 col-xs-4 hidden-xs detail-route ">
+              <div class="col-12 ml10 text-center ">
+                <div class="col-5 col-md-5 ">
+                  <h6 class="span-from-time mt0 mb5 " data-busticketstatus="2 " data-workingtime="False " data-istetticket="0 " data-tripid="0 " data-pickupdate="07:00 12-06-2017 ">
+                            07:00
+                        </h6>
+                </div>
+                <div class="col-2 col-md-2 "><i class="pl5 pr5 text-gray3 left-arrow ">→<br>34h</i></div>
+                <div class="col-5 col-md-5 ">
+                  <h6 class="span-to-time mt0 mb5 " data-busticketstatus="2 " data-workingtime="False " data-istetticket="0 ">
+                            17:00
+                        </h6>
+                </div>
+                <div class="clearfix "></div>
+                <div class="col-5 col-md-5 hidden-xs hidden-sm mt25 ">
+                  <ul class="busInfo ">
+                    <li>
+                      <a class="mt0 depart-station ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text " data-appended="0 " data-trip-id="0 " data-time="07:00 " data-tripcode=" " data-id="29 " data-value="Hồ Chí Minh " href="# " onclick="return false; " data-tab="banggia " data-text="Hồ Chí... ">
+                            Hồ Chí Minh
+                            
+                            <div class="pop-vxr w300 depart-station-tip " style="display: none; ">
+                                <div class="head-pop clearfix ">
+                                    <h5 class="mb5 mt5 ">ĐIỂM ĐI / ĐÓN DỌC ĐƯỜNG</h5>
+                                </div>
+                                <div class="body-pop ">
+                                    <h5 class="mt0 mb5 " style="width: 100%; ">
+
+                                        Hồ Chí Minh (Xuất phát) <span>7:00</span>
+                                    </h5>
+
+                                    <div class="div-pickup-info-29-07-00 ">
+                                        <p class="mt10 ">Địa chỉ: <span class="span-from-address ">Hồ Chí Minh - Hồ Chí Minh - Hồ Chí Minh</span></p>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="footer-pop clearfix ">
+                                    <img class="logo-sm " src="images/logo-sm.svg " alt=" ">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-2 col-md-2 hidden-xs hidden-sm mt25 total-time-text "></div>
+                <div class="col-5 col-md-5 hidden-xs hidden-sm mt25 ">
+                  <ul class="busInfo ">
+                    <li>
+                      <a class="mt0 destination-station ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text " data-appended="0 " data-trip-id="0 " data-tripcode=" " data-time="07:00 " data-id="24 " data-value="Hà Nội " href="# " onclick="return false; " data-tab="banggia " data-text=" Hà Nội ">
+                            Hà Nội 
+                            <div class="pop-vxr w300 destination-station-tip " style="display: none; ">
+                                <div class="head-pop clearfix ">
+                                    <h5 class="mb5 mt5 ">ĐIẾM ĐẾN / TRẢ DỌC ĐƯỜNG</h5>
+                                </div>
+                                <div class="body-pop ">
+                                    <h5 class="mt0 mb5 ">
+
+                                        Hà Nội (Điểm đến) <span>17:00</span>
+                                    </h5>
+                                    <div class="div-pickup-info-24-07-00 ">
+                                        <p class="mt10 ">Địa chỉ: Hà Nội - Hà Nội - Hà Nội</p>
+                                    </div>
+                                </div>
+                                <div class="footer-pop clearfix ">
+                                    <img class="logo-sm " src="images/logo-sm.svg " alt=" ">
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+            <td class="pl0 hidden-xs col-2 col-md-2 col-xs-2 ">
+              <p class="text-center chinh-sach-huy ">
+                <a class="ml5 ticket-detail-tab-link text-route-link hover-orange-border hover-blue-text link-chinh-sach-huy hidden-xs hidden-sm " data-tab="chinhsachhuyve " href="# " data-text="Chính sách hủy vé ">
+                Chính sách hủy vé
+            </a>
+              </p>
+            </td>
+            <td class="text-left hidden-xs hidden-sm col-md-2 col-xs-2 text-center ">
+              <ul class="list-inline pull-left rate-star " data-value="4,038889 ">
+                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+              </ul>
+              <div style="margin-top: 46px; ">
+                <span class="totalComments " style="display:none ">180</span>
+                <a class="rating-link ticket-detail-tab-link text-route-link hover-blue-text hover-orange-border tooltipstered " href="# " data-tab="danhgia ">
+                  <span class="BusQualityRating blue ">3,9/5</span> 180 <span></span> đánh giá <i class="fa fa-sort-desc vt "></i>
+                  <div class="pop-vxr w300 bus-rating-tip " style="display: none; ">
+                    <div class="head-pop clearfix ">
+                      <h5 class="mb5 mt5 ">ĐÁNH GIÁ NHÀ XE</h5>
+                    </div>
+                    <div class="body-pop ">
+                      <h5 class="mt0 mb5 ">Đánh giá nhà xe của 180 hành khách</h5>
+                      <table class="table table-rating ">
+                        <tbody>
+                          <tr>
+                            <td><b>Tổng quan:</b></td>
+                            <td>
+                              <ul class="list-inline pull-left rate-star " data-value="4,038889 ">
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Chất lượng xe:</td>
+                            <td>
+                              <ul class="list-inline pull-left rate-star " data-value="3,927778 ">
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Đúng giờ:</td>
+                            <td>
+                              <ul class="list-inline pull-left rate-star " data-value="3,805556 ">
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Thái độ phục vụ:</td>
+                            <td>
+                              <ul class="list-inline pull-left rate-star " data-value="3,755556 ">
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-yellow "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                                <li><i class="glyphicon glyphicon-star text-gray "></i></li>
+                              </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="footer-pop clearfix ">
+                      <img class="logo-sm " src="images/logo-sm.svg " alt=" ">
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div style="margin-top: 45px; ">
+                <a class="comment-btn-popup text-route-link hover-blue-text comment-text " href="# " onclick="return false; ">
+                    Viết đánh giá
+                </a>
+              </div>
+            </td>
+            <td class="text-right pr0 col-md-3 col-xs-3 ">
+              <meta content="620.000 ">
+              <h6 data-value="620000 " class="mt0 price ">
+                            620.000 <small class="unit-price-small ">đ</small>
+                        </h6>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--main-->
+  </section>
+  <div class="content-infor ">
+    <div class="container ">
+      <div id="main-infor " class="booking-expand ">
+        <div class="row ">
+          <div class="col-md-12 ">
+            <div class=" bg-primary ">
+              <div class="col-md-4 inf-xs text-inf ">THÔNG TIN VÉ XE</div>
+              <div class="hidden-xs col-md-4 hidden-sm text-inf ">Bấm ghế trống để chọn, bấm lần nữa để huỷ</div>
+              <div class="hidden-xs hidden-sm col-md-4 text-inf ">THÔNG TIN KHÁCH HÀNG <span class="btn btn-close-road "><img src="images/btn-close.png " alt=" "></span></div>
+            </div>
+          </div>
+        </div>
+        <!--row-->
+        <div class="white-1 ">
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1 hidden-xs ">
+              <div class="table-info ">
+                <!--   <div class="hidden-md hidden-sm "><h4 class="text-center hidden-xs ">THÔNG TIN VÉ XE</h4></div> -->
+                <ul class="ul-table ">
+                  <li><span class="span-text-2 ">Tuyến đường:</span><b class="pull-right ">Sài Gòn → Hà Nội </b></li>
+                  <li><span class="span-text-2 ">Ngày khởi hành:</span><b class="pull-right ">14-06-2017 </b></li>
+                  <li><span class="span-text-2 ">Giờ xuất phát:</span><b class="pull-right ">07:00 </b></li>
+                  <li><span class="span-text-2 ">Địa chỉ điểm đến:</span><b class="pull-right ">Hồ Chí Minh </b></li>
+                  <li><span class="span-text-2 ">Địa chỉ điểm đến:</span><b class="pull-right ">Hà Nội </b></li>
+                </ul>
+                <!--  <div class="checkbox ">
+          <label><input type="checkbox " value=" ">Bao gồm ăn (giá 130.000 đ/người)</label>
+        </div> -->
+                <div class="checkbox ">
+                  <label>
+                    <input type="checkbox" value="">Bao gồm ăn (giá 130.000 đ/người)</label>
+                </div>
+              </div>
+            </div>
+            <!--col1-->
+            <div class=" col-md-4 col-md-offset-0 hidden-xs hidden-sm ">
+            </div>
+            <!--ghe-->
+            <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 customer-info-col ">
+              <!--  <div class="hidden-md hidden-sm "><h4 class="text-center hidden-xs ">THÔNG TIN KHÁCH HÀNG</h4></div> -->
+              <div class="form-group CustomerFullName ">
+                <div class="col-md-12 col-sm-12 col-xs-12 pl0 pr0 ">
+                  <label class="col-md-12 pl0 pr0 col-sm-3 control-label text-left ">Họ tên:</label>
+                  <input id="cfn " tabindex="1 " name="CustomerFullName " type="text " class="form-control input-vxr " value=" " placeholder="Họ tên " data-toggle="popover " data-content="Họ tên không hợp lệ " data-placement="top ">
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 pl0 pr0 ">
+                <label class="col-md-8 pl0 pr0 control-label text-left ">SĐT:</label>
+                <input id="cp " tabindex="2 " name="CustomerPhone " type="tel " class="form-control input-vxr " value=" " placeholder="VD: 0912345678 " data-toggle="popover " data-content="Vui lòng nhập đúng định dạng (VD: 091 234 56 78) " data-placement="left " onkeypress="return isNumberByEventCode(event) ">
+              </div>
+              <div class="form-group ">
+                <div class="col-md-12 col-sm-12 pl0 pr0 ">
+                  <label for="inputEmail3 " tabindex="3 " class="col-md-12 pl0 pr0 col-sm-3 control-label text-left ">Email:</label>
+                  <input id="ce " name="CustomerEmail " type="text " class="form-control input-vxr " value=" " placeholder="Email " data-toggle="popover " data-content="Email không hợp lệ " data-placement="left ">
+                </div>
+              </div>
+              <div class="pickup-div ">
+                <div class="div-pickup-select form-group ">
+                  <div class="col-md-12 col-sm-12 pl0 pr0 ">
+                    <label tabindex="4 " class="col-md-12 pl0 pr0 col-sm-3 control-label text-left ">Điểm đón:</label>
+                    <select class="picked-select form-control pickup-transfer-surcharge " id="pickup-select " name="PickedInfo ">
+                      <option data-pickupname="(107) VP HCM - 44 QL 13 - Hiệp Bình Chánh - Thủ Đức - TP HCM " data-pickupindex="0 " data-pickuptime="0 " data-pickupid="0 " data-address=" " data-note=" " data-unfixedpoint="0 " data-pickupdeparttime="07:00 " data-surcharge="0 " data-surchargetype="0 ">
+                        07:00 - (107) VP HCM - 44 QL 13 - Hiệp Bình Chánh - Thủ Đức - TP HCM
+                      </option>
+                      <option data-pickupname="(108) BX Miền Đông - Quầy vé 73 " data-pickupindex="1 " data-pickuptime="0 " data-pickupid="0 " data-address=" " data-note=" " data-unfixedpoint="0 " data-pickupdeparttime="07:00 " data-surcharge="0 " data-surchargetype="0 ">
+                        07:00 - (108) BX Miền Đông - Quầy vé 73
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group ">
+                <label class="col-md-11 pl5 pr5 col-sm-11 text-center label-text ">Vui lòng cung cấp email và số điện thoại người đi (số điện thoại Việt Nam).</label>
+              </div>
+            </div>
+            <!--col-3-->
+          </div>
+          <!--row2-->
+          <div class="row ">
+            <div class="price-col ">
+              <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1 ">
+                <span clas="span-text ">Giá vé:</span>
+                <b class="b-text ">620.000 đ/người</b>
+              </div>
+              <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-0 ">
+                <div class="col-md-6 col-xs-12 ">
+                  <span clas="span-text ">Số ghế: </span>
+                  <b><span class="seat-template-seat-code pull-right ">Vui lòng chọn ít nhất 1 chỗ ngồi</span></b>
+                </div>
+                <div class="col-md-6 col-xs-12 ">
+                  <span class="span-text1 ">Tổng tiền:</span>
+                  <div class="pull-right ">
+                    <span class="seat-template-old-total-fare "></span>
+                    <h4 class="seat-template-total-fare h4-text ">0</h4><small class="unit-price-small ">đ</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-md-offset-0 col-xs-8 col-xs-offset-2 ">
+                <div class="form-group mb0 ">
+                  <div class="col-md-offset-3 col-md-8 col-sm-11 pl0 pr0 cont-container text-center ">
+                    <button type="button " class="cont-btn btn btn-vxr-lg btn-vxr-lg-action ">
+                      Tiếp tục <i class="glyphicon glyphicon-chevron-right f14 "></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--row-3-->
+        </div>
+        <!--white-->
+        <div class="row ">
+          <div class="col-md-12 col-xs-12 ">
+            <h6 class="text-wblue thin200 pull-left pl5 selfie ">VeXeRe.com - Hệ thống vé xe lớn nhất Việt Nam</h6>
+            <img class="logo-sm " src="images/logo-sm.svg " alt=" ">
+            <h6 class="text-wblue thin200 pull-right pr5 ">Mọi thắc mắc vui lòng gọi hotline:  <b><a class="hotline-link " href="tel:1900 969681 ">1900 969681</a></b> - <b><a class="hotline-link " href="tel:1900 7070 ">1900 7070</a></b></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  TRANG THONG TIN VE XE -->
+  @stop

@@ -1,0 +1,461 @@
+@media (max-width: 1200px) {
+  .ticket-search-filter input {
+    width: 170px;
+  }
+  ul.routes-list li span {
+    width: 164px;
+  }
+}
+
+@media (max-width: 992px) {
+   ul.routes-list li {
+  
+  width: 100%; 
+  }
+
+   ul.routes-list li span {
+    width: 400px;
+  }
+  /*slide slick*/
+  /*.slick-initialized .slick-slide {
+
+  height: 230px;
+  width: 280px;
+  margin-left: 28px;
+  position: relative;
+}*/
+
+
+/*.slick-track {
+  opacity: 1;
+  width: 3000x;
+  transform: translate3d(-1000px, 0px, 0px);
+}*/
+
+/*.slick-overlay {
+    background: #eee;
+
+    width: 210px;
+    height: 145px;
+
+}*/
+
+  .padd-2{
+    margin-top: 15px;
+  }
+  .navbar-left,
+  .ul-menu {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+  .padd-1 {
+    margin-top: 50px;
+  }
+  /*/reponsive dat ve xe/*/
+  .ticket-search-filter input {
+    width: 150px;
+  }
+  .date-picker-nav .btn-default {
+    background-color: #fff !important;
+    border-color: #fff !important;
+  }
+  .img-change-date {
+    width: 8px;
+  }
+  #btNextDate {
+    border-bottom-right-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+  }
+  #btPrevDate {
+    border-bottom-left-radius: 4px !important;
+    border-top-left-radius: 4px !important;
+  }
+  .btn-group>.btn:first-child {
+    margin-left: 0;
+  }
+  /*trang thong tin ve xe*/
+  .price-col {
+    border: none;
+    margin: 10px 5px -5px 5px;
+  }
+  .cont-btn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .logo-sm {
+
+    bottom: 40px;
+
+}
+ .btn-vxr-lg {
+    margin-top: 20px;
+  }
+/*  trang lien he*/
+  .contact-content {
+    border-left: none;
+}
+
+}
+
+@media (max-width: 767px) {
+  ul.routes-list li {
+  
+  width: 100%; 
+  }
+
+   ul.routes-list li span {
+    width: 300px;
+  }
+  /*slide slick*/
+
+  /*.slick-initialized .slick-slide {
+
+  height: 210px;
+  width: 270px;
+  margin-left: 68px;
+  position: relative;
+}*/
+/*.slick-track {
+  opacity: 1;
+  width: 3000x;
+  transform: translate3d(-1000px, 0px, 0px);
+}
+*/
+/*.slick-overlay {
+    background: #eee;
+
+    width: 200px;
+    height: 135px;
+
+}*/
+
+.slick-initialized .slick-slide {
+
+
+  height: 260px;
+  /*width: 306px;*/
+  margin-left: 48px;
+  position: relative;
+}
+
+ /* thongtinvexe*/
+  .totalHours {
+    font-size: 11px !important;
+    display: inline-block;
+    margin-left: 0;
+    float: none;
+}
+  .comp-name-container {
+    background: none !important;
+    padding-left: 0 !important;
+}
+ /* thongtinvexe*/
+  .from-search-detail div {
+    width:40%;
+}
+  .from-search-detail .promotiont-search {
+    width: 20%;
+  }
+  .from-search-detail {
+    background: #ccc;
+    height: auto;
+  }
+
+  .logo{
+        max-width: 225px;
+    margin-bottom: 5px;
+  }
+  .center-m {
+    display: block;
+    text-align: center;
+  }
+  .padd-1 {
+    margin-top: 20px;
+  }
+  /* .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }*/
+  .start-time-drop,
+  .stop-time-drop {
+    border: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    width: 35%;
+    margin-right: 0;
+  }
+  /*  datvexe*/
+  .ticket-search-filter {
+    padding: 0 !important;
+    background: #fff;
+  }
+  .title-text-route {
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+  }
+  .pull-left {
+    float: none;
+    display: inline-block;
+  }
+  .modify-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(../images/search.svg) no-repeat 100%;
+    background-color: none !important;
+    background-size: 18px;
+    background-position-x: 0;
+    height: 30px;
+    width: 30px !important;
+    margin: 0 !important;
+    border: 0;
+  }
+  /*
+danhgia-reponsive*/
+/*  .filter-container {
+    background: #9a9a9a;
+    padding: 0;
+  }*/
+  ul.filter-mobile-header li {
+    float: left;
+    text-align: center;
+    width: 25%;
+    padding: 15px 0;
+    background-color: #e6e6e6 !important;
+    background-position: top 50% right 10px;
+    background-repeat: no-repeat;
+    background-size: 8px;
+  }
+  ul.filter-mobile-header {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul.filter-mobile-header {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul.filter-mobile-header li#li-fare {
+    border-right: 1px solid #b3b3b3;
+  }
+  ul.filter-mobile-header li#li-rating {
+    border-left: 1px solid #b3b3b3;
+    border-right: 1px solid #b3b3b3;
+  }
+  .padd-2 {
+    margin-top: -45px;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  ul.filter-mobile-header li#li-filter {
+    background: url(../images/filter.svg) no-repeat 100%;
+    background-size: 15px;
+    background-position-x: 90%;
+    background-position-y: 16px;
+  }
+  .vehicle-type-p {
+    font-size: 15px;
+    margin-top: 0;
+  }
+  .vehicle-type-p {
+    color: #343434 !important;
+  }
+  .totalHours {
+    font-size: 13px !important;
+    display: inline-block;
+    margin-left: 0;
+    float: none;
+  }
+  .searchResults h6.price,
+  .unit-price-small {
+    color: #e31c3d !important;
+    width: initial;
+    margin: 0;
+  }
+  .service-call {
+    font-size: 16px !important;
+    margin: 10px 0 12px 0;
+  }
+  .Rating-mobile-star {
+    margin-bottom: 10px !important;
+  }
+  .btn-vxr-lg {
+    font-size: 15px !important;
+    width: 40% !important;
+    line-height: 30px;
+    height: 35px;
+  }
+  .start-time-drop {
+    margin-right: 15px;
+    font-size: 16px !important;
+  }
+  .pull-left-mobi {
+    width: 40%;
+  }
+  .stop-time-drop {
+    width: 35%;
+  }
+  .pull-left {
+    float: none;
+    display: inline-block;
+  }
+  .start-time-drop,
+  .stop-time-drop {
+    border: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    width: 95%;
+    margin-right: 20px;
+    height: 22px;
+    margin-bottom: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../images/tet-ico-dropdown.png) no-repeat scroll 97% center transparent;
+  }
+  /*trang thong tin ve xe
+*/
+  .cont-container {
+    padding-left: 15px !important;
+  }
+ /* .ticket-ac-btn{
+    margin-top: 20px;
+  }*/
+  .btn-vxr-lg {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  ul.routes-list li {
+  
+  width: 100%; 
+  }
+
+   ul.routes-list li span {
+    width: 200px;
+  }
+  .slick-initialized .slick-slide {
+
+
+  height: 170px;
+  /*width: 306px;*/
+  margin-left: 48px;
+  position: relative;
+}
+
+  .slick-overlay {
+    background: #eee;
+
+    width: 180px;
+    height: 110px;
+
+}
+p, a {
+    font-weight: 400;
+    font-size: 11px;
+}
+span.title {
+
+  font-size: 12px;
+
+}
+@media (max-width: 480px) {
+  .slick-overlay {
+    background: #eee;
+
+    width: 140px;
+    height: 100px;
+
+
+
+}
+
+span.title {
+
+  font-size: 10px;
+
+}
+p, a {
+    font-weight: 400;
+    font-size: 10px;
+}
+  .padd-2{
+    margin-top: -35px;
+  }
+  .page-next{
+  width: 100%;
+    text-align: center;
+  }
+  .img-content img{
+    width: 100%;
+  }
+  .main-content .img-content {
+    float:none;
+}
+.list-content ul {
+    padding-left: 0px;
+}
+.logo-img img{
+top: 9px;
+
+    position: absolute;
+}
+
+}
+
+
+/*@media screen and(max-width: 991px){
+.departDate-fg .fa-caret-right{
+  right: 0px;
+}
+.departDate-fg .fa-caret-left{
+  left: 2px;
+}
+.ticket-search-filter .calendar-search{
+  padding-left: :39px;
+}
+#departDate{
+  border-radius: 5px;
+}
+}
+*/
+
