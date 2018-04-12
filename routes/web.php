@@ -219,3 +219,34 @@ Route::post('/language-chooser', 'Language\LanguageController@changeLanguage');
 Route::post('/language/', array('before' => 'csrf', 'as'=>'language-chooser', 'uses' => 'Language\LanguageController@changeLanguage',) );
 
 Route::get('test','Test\TestController@all')->name('test');
+
+
+//-----------------------------------Account---------------------------------------------------
+//Route::get('account','Account\AccountController@create')->name('account.create');
+//Route::post('account','Account\AccountController@store')->name('account.store');
+//Route::get('account/{id}','Account\AccountController@show')->name('account.show');
+//Route::get('account/{id}/edit','Account\AccountController@edit')->name('account.edit');
+//Route::patch('account/{id}','Account\AccountController@update')->name('account.update');
+
+Route::resource('account', 'Account\AccountController');
+Route::post('account/login', 'Account\AccountController@postLogin')->name('account.login');
+
+//-----------------------------------End Account---------------------------------------------------
+
+
+//----------------------------------Admin Car Company-------------------------------------------
+
+Route::get( 'vehicle', 'AVehicle\AVehicleController@admin_index' )->name( 'vms.vehicle.index' );
+Route::get( 'vehicle/create', 'AVehicle\AVehicleController@create' )->name( 'vms.vehicle.create' );
+Route::post( 'vehicle/create', 'AVehicle\AVehicleController@store' )->name( 'vms.vehicle.store' );
+Route::get( 'vehicle/edit/{id}', 'AVehicle\AVehicleController@edit' )->name( 'vms.vehicle.edit');
+Route::put( 'vehicle/edit/{id}', 'AVehicle\AVehicleController@update' )->name( 'vms.vehicle.update' );
+Route::get( 'vehicle/show/{id}', 'AVehicle\AVehicleController@show' )->name( 'vms.vehicle.show' );
+Route::delete( 'vehicle/{id}', 'AVehicle\AVehicleController@destroy' )->name( 'vms.vehicle.destroy' );
+/*Route::get('car_company/check-phone', 'CarCompany\CarCompanyController@validate_phone_request')->name('admin.car.checkphone');
+Route::get('car_company/check-email', 'CarCompany\CarCompanyController@validate_email_request')->name('admin.car.checkemail');
+Route::get( 'car_company/search', 'CarCompany\CarCompanyController@search' )->name( 'admin.car.search' );
+//Dropzone 
+Route::post('car_company/uploadImage','CarCompany\CarCompanyController@uploadImageDz')->name('admin.car.uploadImage');
+Route::get('car_company/getImages','CarCompany\CarCompanyController@getImages')->name('admin.car.getImages');
+Route::post('car_company/removeImage','CarCompany\CarCompanyController@removeImage')->name('admin.car.removeImage');*/

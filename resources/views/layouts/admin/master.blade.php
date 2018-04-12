@@ -594,6 +594,14 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('vms.vehicle.index') }}">
+                    <div class="pull-left"><i class="fa fa-bus mr-20"></i><span
+                                class="right-nav-text">Danh sách xe</span></div>
+                    <div class="pull-right"><span class="label label-warning">8</span></div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('admin.station.index') }}">
                     <div class="pull-left"><i class="fa fa-map-marker mr-20"></i><span
                                 class="right-nav-text">Bến Xe</span></div>
