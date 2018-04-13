@@ -72,20 +72,20 @@ Route::post('/logout','Login\LoginController@getLogout')->name('admin.logout');
 
 	//----------------------------------Admin Car Company-------------------------------------------
 
-	Route::get( 'car_company', 'CarCompany\CarCompanyController@admin_index' )->name( 'admin.car.index' );
-	Route::get( 'car_company/create', 'CarCompany\CarCompanyController@create' )->name( 'admin.car.create' );
-	Route::post( 'car_company/create', 'CarCompany\CarCompanyController@store' )->name( 'admin.car.store' );
-	Route::get( 'car_company/edit/{id}', 'CarCompany\CarCompanyController@edit' )->name( 'admin.car.edit');
-	Route::put( 'car_company/edit/{id}', 'CarCompany\CarCompanyController@update' )->name( 'admin.car.update' );
-	Route::get( 'car_company/show/{id}', 'CarCompany\CarCompanyController@show' )->name( 'admin.car.show' );
-	Route::delete( 'car_company/{id}', 'CarCompany\CarCompanyController@destroy' )->name( 'admin.car;.destroy' );
-	Route::get('car_company/check-phone', 'CarCompany\CarCompanyController@validate_phone_request')->name('admin.car.checkphone');
-	Route::get('car_company/check-email', 'CarCompany\CarCompanyController@validate_email_request')->name('admin.car.checkemail');
-	Route::get( 'car_company/search', 'CarCompany\CarCompanyController@search' )->name( 'admin.car.search' );
+	Route::get( 'car_company', 'AVehicle\AVehicleController@admin_index' )->name( 'admin.car.index' );
+	Route::get( 'car_company/create', 'AVehicle\AVehicleController@create' )->name( 'admin.car.create' );
+	Route::post( 'car_company/create', 'AVehicle\AVehicleController@store' )->name( 'admin.car.store' );
+	Route::get( 'car_company/edit/{id}', 'AVehicle\AVehicleController@edit' )->name( 'admin.car.edit');
+	Route::put( 'car_company/edit/{id}', 'AVehicle\AVehicleController@update' )->name( 'admin.car.update' );
+	Route::get( 'car_company/show/{id}', 'AVehicle\AVehicleController@show' )->name( 'admin.car.show' );
+	Route::delete( 'car_company/{id}', 'AVehicle\AVehicleController@destroy' )->name( 'admin.car;.destroy' );
+	Route::get('car_company/check-phone', 'AVehicle\AVehicleController@validate_phone_request')->name('admin.car.checkphone');
+	Route::get('car_company/check-email', 'AVehicle\AVehicleController@validate_email_request')->name('admin.car.checkemail');
+	Route::get( 'car_company/search', 'AVehicle\AVehicleController@search' )->name( 'admin.car.search' );
 	//Dropzone 
-	Route::post('car_company/uploadImage','CarCompany\CarCompanyController@uploadImageDz')->name('admin.car.uploadImage');
-	Route::get('car_company/getImages','CarCompany\CarCompanyController@getImages')->name('admin.car.getImages');
-	Route::post('car_company/removeImage','CarCompany\CarCompanyController@removeImage')->name('admin.car.removeImage');
+	Route::post('car_company/uploadImage','AVehicle\AVehicleController@uploadImageDz')->name('admin.car.uploadImage');
+	Route::get('car_company/getImages','AVehicle\AVehicleController@getImages')->name('admin.car.getImages');
+	Route::post('car_company/removeImage','AVehicle\AVehicleController@removeImage')->name('admin.car.removeImage');
 
 
 
@@ -189,7 +189,7 @@ Route::post( 'cancelTicket', 'BookTicket\BookTicketController@canceledTicket')->
 Route::get('station/{id}','Stations\StationController@index');
 
 
-Route::get('car/{id}','CarCompany\CarCompanyController@index')->name( 'car.show');
+Route::get('car/{id}','AVehicle\AVehicleController@index')->name( 'car.show');
 
 
 //--------------Car Company------------------------------------------------
@@ -243,10 +243,16 @@ Route::get( 'vehicle/edit/{id}', 'AVehicle\AVehicleController@edit' )->name( 'vm
 Route::put( 'vehicle/edit/{id}', 'AVehicle\AVehicleController@update' )->name( 'vms.vehicle.update' );
 Route::get( 'vehicle/show/{id}', 'AVehicle\AVehicleController@show' )->name( 'vms.vehicle.show' );
 Route::delete( 'vehicle/{id}', 'AVehicle\AVehicleController@destroy' )->name( 'vms.vehicle.destroy' );
-/*Route::get('car_company/check-phone', 'CarCompany\CarCompanyController@validate_phone_request')->name('admin.car.checkphone');
-Route::get('car_company/check-email', 'CarCompany\CarCompanyController@validate_email_request')->name('admin.car.checkemail');
-Route::get( 'car_company/search', 'CarCompany\CarCompanyController@search' )->name( 'admin.car.search' );
+Route::get( 'vehicle/search', 'AVehicle\AVehicleController@search' )->name( 'vms.vehicle.search' );
+
+Route::post('vehicle/uploadImage','AVehicle\AVehicleController@uploadImageDz')->name('vms.vehicle.uploadImage');
+Route::get('vehicle/getImages','AVehicle\AVehicleController@getImages')->name('vms.vehicle.getImages');
+Route::post('vehicle/removeImage','AVehicle\AVehicleController@removeImage')->name('vms.vehicle.removeImage');
+
+/*Route::get('car_company/check-phone', 'AVehicle\AVehicleController@validate_phone_request')->name('admin.car.checkphone');
+Route::get('car_company/check-email', 'AVehicle\AVehicleController@validate_email_request')->name('admin.car.checkemail');
+Route::get( 'car_company/search', 'AVehicle\AVehicleController@search' )->name( 'admin.car.search' );
 //Dropzone 
-Route::post('car_company/uploadImage','CarCompany\CarCompanyController@uploadImageDz')->name('admin.car.uploadImage');
-Route::get('car_company/getImages','CarCompany\CarCompanyController@getImages')->name('admin.car.getImages');
-Route::post('car_company/removeImage','CarCompany\CarCompanyController@removeImage')->name('admin.car.removeImage');*/
+Route::post('car_company/uploadImage','AVehicle\AVehicleController@uploadImageDz')->name('admin.car.uploadImage');
+Route::get('car_company/getImages','AVehicle\AVehicleController@getImages')->name('admin.car.getImages');
+Route::post('car_company/removeImage','AVehicle\AVehicleController@removeImage')->name('admin.car.removeImage');*/
