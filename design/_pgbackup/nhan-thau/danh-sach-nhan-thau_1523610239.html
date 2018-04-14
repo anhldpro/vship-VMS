@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Blank Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="../style.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>DANH SÁCH NHẬN THẦU</h4>
+                    </div>                     
+                    <div class="panel-body">
+                        <div class="panel panel-default"> 
+                            <div class="panel-heading panel-default">
+                                <div class="btn-group"> 
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">    Action 
+                                        <span class="caret"></span>
+                                    </button>                                     
+                                    <ul class="dropdown-menu" role="menu"> 
+                                        <li>
+                                            <a href="#">Action</a>
+                                        </li>                                         
+                                        <li>
+                                            <a href="#">Another action</a>
+                                        </li>                                         
+                                        <li>
+                                            <a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>                                         
+                                        <li>
+                                            <a href="#">Separated link</a>
+                                        </li>
+                                    </ul>                                     
+                                </div>
+                                <h4 class="pull-left">Lọc theo: </h4>
+                            </div>                             
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="container-fluid">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled"> 
+                                            <li>
+                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                                <span>Nơi gửi: </span>
+                                                <span>Thanh Xuân, Hanoi, Vietnam</span>
+                                            </li>                                             
+                                            <li>
+                                                <span class="glyphicon glyphicon-map-marker"></span>
+                                                <span>Nơi nhận: </span>
+                                                <span>Lạng Sơn, Vietnam</span>
+                                            </li>                                             
+                                        </ul>                                         
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn pull-right btn-primary">Chi tiết</button>
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div class="panel-body">
+                                <div class="clearfix clear-columns"></div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="container-fluid">
+                                            <div class="col-md-3">
+                                                <i class="fa fa-calendar-o text-success"></i> 13/04/2018                                                                                                  
+                                            </div>
+                                            <div class="col-md-3">
+                                                <i class="fa fa-calendar-o text-warning"></i> 13/04/2018                                                                                                  
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="glyphicon glyphicon-folder-close"></span> 13/04/2018                                                                                                  
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="glyphicon glyphicon-usd"></span> 13/04/2018                                                                                                  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="container-fluid">
+                                            <div class="col-md-3">
+                                                <span class="">Bàn ghế, giường tủ</span> 
+                                            </div>
+                                            <div class="col-md-3"> 
+</div>
+                                            <div class="col-md-3"> 
+</div>
+                                            <div class="col-md-3 pull-right">
+                                                <span class="glyphicon pull-right glyphicon-map-marker"> Bản đồ</span> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="container-fluid">
+                                            <div class="col-md-3">
+                                                <span class="text-warning" id="5acdcb70db255"><i class="fa fa-calendar-plus-o"></i><span ng-bind="convertDate(item.estPickupTime, 'day')" class="ng-binding">13/04/2018</span></span> 
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span class="text-warning" ng-show="item.reviews.length == 0"><i class="fa fa-comment-o"></i>Chưa nhận xét</span> 
+                                            </div>
+                                            <div class="col-md-3">
+                                                <span>Trạng thái: Mới tạo</span> 
+                                            </div>
+                                            <div class="col-md-3">
+</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="container-fluid">
+                                            <div class="col-md-3">
+                                                <span class="">Bàn ghế, giường tủ</span> 
+                                            </div>
+                                            <div class="col-md-3"> 
+</div>
+                                            <div class="col-md-3"> 
+</div>
+                                            <div class="col-md-3">
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>
