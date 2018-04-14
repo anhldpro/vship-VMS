@@ -31,6 +31,10 @@
             originInput, {placeIdOnly: true});
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
+          
+          
+          console.log(originAutocomplete);
+          console.log(destinationAutocomplete);
 
         //this.setupClickListener('changemode-walking', 'WALKING');
         //this.setupClickListener('changemode-transit', 'TRANSIT');

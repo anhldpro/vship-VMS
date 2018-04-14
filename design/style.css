@@ -1,10 +1,22 @@
 
 
-#map {
+#map
+{
     width: 100%;
     height: 400px;
 }
-.controls1 {
+
+
+#map1
+{
+    width: 100%;
+    
+    height: 875px;
+    margin: 0 10px;
+}
+
+.controls1
+{
     margin-top: 10px;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
@@ -14,7 +26,9 @@
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-#searchInput1 {
+
+#searchInput1
+{
     background-color: #fff;
     font-family: Roboto;
     font-size: 15px;
@@ -24,6 +38,20 @@
     text-overflow: ellipsis;
     width: 50%;
 }
-#searchInput1:focus {
+
+#searchInput1:focus
+{
     border-color: #4d90fe;
 }
+
+.pf-acct-title
+{
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+.mg-top-20
+{
+    margin-top: 20px;
+}
+
