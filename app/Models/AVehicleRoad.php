@@ -27,7 +27,7 @@ class AVehicleRoad extends Model
     /**
      * @var array
      */
-    protected $fillable = ['veh_id', 'from_pos', 'from_name', 'to_pos', 'to_name', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['veh_id', 'fix_road', 'from_pos', 'from_name', 'to_pos', 'to_name', 'status', 'created_at', 'updated_at'];
 
     public function vehicle(){
         return $this->belongsTo('App\Models\AVehicle','veh_id');

@@ -236,7 +236,7 @@ Route::post('account/login', 'Account\AccountController@postLogin')->name('accou
 
 //----------------------------------Admin Car Company-------------------------------------------
 
-Route::get( 'vehicle', 'AVehicle\AVehicleController@admin_index' )->name( 'vms.vehicle.index' );
+Route::get( 'vehicle', 'AVehicle\AVehicleController@index' )->name( 'vms.vehicle.index' );
 Route::get( 'vehicle/create', 'AVehicle\AVehicleController@create' )->name( 'vms.vehicle.create' );
 Route::post( 'vehicle/create', 'AVehicle\AVehicleController@store' )->name( 'vms.vehicle.store' );
 Route::get( 'vehicle/edit/{id}', 'AVehicle\AVehicleController@edit' )->name( 'vms.vehicle.edit');
@@ -249,10 +249,14 @@ Route::post('vehicle/uploadImage','AVehicle\AVehicleController@uploadImageDz')->
 Route::get('vehicle/getImages','AVehicle\AVehicleController@getImages')->name('vms.vehicle.getImages');
 Route::post('vehicle/removeImage','AVehicle\AVehicleController@removeImage')->name('vms.vehicle.removeImage');
 
-/*Route::get('car_company/check-phone', 'AVehicle\AVehicleController@validate_phone_request')->name('admin.car.checkphone');
-Route::get('car_company/check-email', 'AVehicle\AVehicleController@validate_email_request')->name('admin.car.checkemail');
-Route::get( 'car_company/search', 'AVehicle\AVehicleController@search' )->name( 'admin.car.search' );
-//Dropzone 
-Route::post('car_company/uploadImage','AVehicle\AVehicleController@uploadImageDz')->name('admin.car.uploadImage');
-Route::get('car_company/getImages','AVehicle\AVehicleController@getImages')->name('admin.car.getImages');
-Route::post('car_company/removeImage','AVehicle\AVehicleController@removeImage')->name('admin.car.removeImage');*/
+
+//only for test
+Route::get('upload', ['as' => 'upload', 'uses' => 'ImageController@getUpload']);
+Route::post('upload', ['as' => 'upload-post', 'uses' =>'ImageController@postUpload']);
+Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
+
+//----------------------------------VMS Road-------------------------------------------
+
+Route::get( 'road', 'Road\RoadController@index' )->name( 'vms.road.index' );
+Route::get( 'road/create', 'Road\RoadController@create' )->name( 'vms.road.create' );
+Route::post( 'road/create', 'Road\RoadController@store' )->name( 'vms.road.store' );

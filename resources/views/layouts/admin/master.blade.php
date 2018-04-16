@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
+    <title>vShip VMS</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="{{url('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -18,6 +18,13 @@
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="{{url('css/sb-admin.css')}}" rel="stylesheet">
+
+    <!-- vShip Admin CSS - Include with every page -->
+    <link href="{{url('css/vship-default.css')}}" rel="stylesheet">
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="{{url('js/jquery-1.10.2.js')}}"></script>
+    <script src="{{url('js/bootstrap.min.js')}}"></script>
 
     @yield('head')
 </head>
@@ -34,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            <a class="navbar-brand" href="index.html">vShip VMS v1.0</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -266,7 +273,7 @@
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.listBookTicket.index') }}"><i class="fa fa-info fa-fw"></i> {{trans('admin.admin_ticket')}}</a>
+                        <a href="{{ route('vms.vehicle.index') }}"><i class="fa fa-truck fa-fw"></i> Danh sách xe</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.car.index') }}"><i class="fa fa-edit fa-fw"></i> Nhà xe</a>
@@ -362,21 +369,21 @@
 </div>
 <!-- /#wrapper -->
 
-<!-- Core Scripts - Include with every page -->
-<script src="{{url('js/jquery-1.10.2.js')}}"></script>
-<script src="{{url('js/bootstrap.min.js')}}"></script>
 <script src="{{url('js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
 
 <!-- Page-Level Plugin Scripts - Dashboard -->
 <script src="{{url('js/plugins/morris/raphael-2.1.0.min.js')}}"></script>
-<script src="{{url('js/plugins/morris/morris.js')}}"></script>
+{{--<script src="{{url('js/plugins/morris/morris.js')}}"></script>--}}
 
 <!-- SB Admin Scripts - Include with every page -->
 <script src="{{url('js/sb-admin.js')}}"></script>
 
-<!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
-<script src="{{url('js/demo/dashboard-demo.js')}}"></script>
 
+<script src="{{url('js/vms/date-time.js')}}"></script>
+
+<!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+{{--<script src="{{url('js/demo/dashboard-demo.js')}}"></script>--}}
+@yield('footer')
 </body>
 
 </html>
