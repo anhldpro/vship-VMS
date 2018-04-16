@@ -9,6 +9,7 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Log;
 use Illuminate\Support\Facades\Validator as Validator;
 use App\Models\AVehicle;
@@ -66,13 +67,13 @@ class AVehicleController extends Controller
         try {
             $rules = [
                 'cat_veh' => 'required',
-                'cat_province_from' => 'required',
-                'cat_province_to' => 'required'
+//                'cat_province_from' => 'required',
+//                'cat_province_to' => 'required'
             ];
             $messages = [
                 'cat_veh.required' => 'Vui lòng chọn loại xe!!!',
-                'cat_province_from.required' => 'Vui lòng chọn điểm khởi hành!!!',
-                'cat_province_to.required' => 'Vui lòng chọn điểm đến!!!'
+//                'cat_province_from.required' => 'Vui lòng chọn điểm khởi hành!!!',
+//                'cat_province_to.required' => 'Vui lòng chọn điểm đến!!!'
             ];
             /*
                 $validate= Validator::make(
@@ -102,11 +103,9 @@ class AVehicleController extends Controller
             $validator = Validator::make($request->all(), $rules, $messages);
 
             if ($validator->fails()) {
-                return response()->json([
-                    'error' => true,
-                    'message' => $validator->errors(),
-                    'data' => $request->all()
-                ], 200);
+                return redirect(route('vms.vehicle.create'))
+                    ->withErrors($validator)
+                    ->withInput();
             } else {
 //                dd($data);
                 $avatar = $data['avatar'];
@@ -117,11 +116,14 @@ class AVehicleController extends Controller
                  * 1. save vehicle info
                  */
                 $veh = new AVehicle;
+                $veh->account_id = Auth::id();
                 $veh->veh_type = $data['cat_veh'];
                 $veh->veh_capacity = $data['capacity'];
                 $veh->desc = $data['desc'];
                 $veh->avatar = $data['avatar'];
                 $veh->status = 'ACTV';
+
+
 
                 $veh->save();
 
@@ -160,26 +162,11 @@ class AVehicleController extends Controller
                 array_map('unlink', glob($temp_folder . '*'));
                 $remove_temp_folder = is_dir($temp_folder) ? rmdir($temp_folder) : '';
 
-                /*
-                 * 3. Them tuyen duong (AVehicleRoad)
-                 */
 
-                $isFix = ($data['fix_road'] == true) ? 1 : 0;
-
-                $vehRoad = new AVehicleRoad();
-                $vehRoad->veh_id = $id;
-                $vehRoad->from_pos = $data['cat_province_from'];
-                $vehRoad->from_name = $data['cat_pro_from_name'];
-                $vehRoad->to_pos = $data['cat_province_to'];
-                $vehRoad->to_name = $data['cat_pro_to_name'];
-                $vehRoad->status = 'ACTV';
-                $vehRoad->fix_road = $isFix;
-
-                $vehRoad->save();
 
                 Session::flash('success', 'Thêm mới thành công !!!!!');
 
-                return redirect(route('vms.vehicle.index'));
+                return redirect(route('vms.vehicle.show', ['id'=>$id]));
             }
         } catch (Exception $e) {
             \Log::info($e->getMessage());
@@ -335,12 +322,14 @@ class AVehicleController extends Controller
 
     public function show($id)
     {
-        $data = AVehicle::find($id);
+        $vehicle = AVehicle::find($id);
         // dd($data);
-        $datas = ImagesFiles::where('type', '2')->where('content_id', $id)->get();
+//        $datas = ImagesFiles::where('type', '2')->where('content_id', $id)->get();
+        $vehRoad = new AVehicleRoad;
+        $roads = $vehRoad->getRoadByVehId($id);
         $this->viewData = array(
-            'data' => $data,
-            'datas' => $datas
+            'vehicle' => $vehicle,
+            'roads' => $roads
         );
         return view('vms.vehicle.show', $this->viewData);
     }

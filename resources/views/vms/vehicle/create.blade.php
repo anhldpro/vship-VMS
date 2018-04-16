@@ -42,48 +42,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="grid_4 col-md-12">
-                        <label>
-                            <input class="control-label" type="checkbox" value="0" name="fix_road" id="fix_road">Xe chạy tuyến cố định
-                        </label>
-                    </div>
+            {{--<div class="row" style="display: none">
+                <div class="grid_4 col-md-12">
+                    <label>
+                        <input class="control-label" type="checkbox" value="0" name="fix_road" id="fix_road">Xe chạy tuyến cố định
+                    </label>
                 </div>
-                <div class="row" data-pg-collapsed id="vs-road">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label" for="formInput516">Địa điểm khởi hành (Tỉnh/TP)</label>
-                            <select id="formInput516" class="form-control" name="cat_province_from" required>
-                                @if(!empty($provinces))
-                                    <option value="">--Lựa chọn điểm đi-- </option>
-                                    @foreach($provinces as $item)
-                                        <option value="{{$item->id}}" data-tokens="{{ $item->name }}">{{$item->name }} </option>
-                                    @endforeach
-                                    <input type="hidden" name="cat_pro_from_name"/>
-                                @endif
-                                @if(count($provinces)==0)
-                                    <option value=""><em>(Không danh mục nào)</em></option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label" for="formInput539">Địa điểm đến (Tỉnh/TP)</label>
-                            <select id="formInput539" class="form-control" name="cat_province_to" required>
-                                @if(!empty($provinces))
-                                    <option value="">--Lựa chọn điểm đến-- </option>
-                                    @foreach($provinces as $item)
-                                        <option value="{{$item->id}}" data-tokens="{{ $item->name }}">{{$item->name }} </option>
-                                    @endforeach
-                                    <input type="hidden" name="cat_pro_to_name"/>
-                                @endif
-                                @if(count($provinces)==0)
-                                    <option value=""><em>(Không danh mục nào)</em></option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
+            </div>
+            <div class="row" data-pg-collapsed id="vs-road">--}}
+                    {{--<div class="col-md-6">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<label class="control-label" for="formInput516">Địa điểm khởi hành (Tỉnh/TP)</label>--}}
+                            {{--<select id="formInput516" class="form-control" name="cat_province_from" required>--}}
+                                {{--@if(!empty($provinces))--}}
+                                    {{--<option value="">--Lựa chọn điểm đi-- </option>--}}
+                                    {{--@foreach($provinces as $item)--}}
+                                        {{--<option value="{{$item->id}}" data-tokens="{{ $item->name }}">{{$item->name }} </option>--}}
+                                    {{--@endforeach--}}
+                                    {{--<input type="hidden" name="cat_pro_from_name"/>--}}
+                                {{--@endif--}}
+                                {{--@if(count($provinces)==0)--}}
+                                    {{--<option value=""><em>(Không danh mục nào)</em></option>--}}
+                                {{--@endif--}}
+                            {{--</select>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-6">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<label class="control-label" for="formInput539">Địa điểm đến (Tỉnh/TP)</label>--}}
+                            {{--<select id="formInput539" class="form-control" name="cat_province_to" required>--}}
+                                {{--@if(!empty($provinces))--}}
+                                    {{--<option value="">--Lựa chọn điểm đến-- </option>--}}
+                                    {{--@foreach($provinces as $item)--}}
+                                        {{--<option value="{{$item->id}}" data-tokens="{{ $item->name }}">{{$item->name }} </option>--}}
+                                    {{--@endforeach--}}
+                                    {{--<input type="hidden" name="cat_pro_to_name"/>--}}
+                                {{--@endif--}}
+                                {{--@if(count($provinces)==0)--}}
+                                    {{--<option value=""><em>(Không danh mục nào)</em></option>--}}
+                                {{--@endif--}}
+                            {{--</select>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="row" data-pg-collapsed>
                     <div class="col-md-12">
@@ -128,7 +128,7 @@
 @section('footer')
 
     <script>
-        function changeFixRoad() {
+        /*function changeFixRoad() {
             if ($(this).is(':checked')) {
                 $("#vs-road").css('display', '');
                 $("#fix_road").val("1");
@@ -136,25 +136,25 @@
                 $("#vs-road").css("display", "none");
                 $("#fix_road").val("0");
             }
-        }
+        }*/
 
         $(document).ready(function(){
 
             //veh road style
-            $("#vs-road").css("display", "none");
+            // $("#vs-road").css("display", "none");
 
-            changeFixRoad();
-            $("#fix_road").change(function () {
-                changeFixRoad.call(this);
-            });
-
-            //get name of province selected
-            $("[name='cat_province_from']").change(function () {
-               $("[name='cat_pro_from_name']").val($(this).find("option:selected").text());
-            });
-            $("[name='cat_province_to']").change(function () {
-                $("[name='cat_pro_to_name']").val($(this).find("option:selected").text());
-            });
+            // changeFixRoad();
+            // $("#fix_road").change(function () {
+            //     changeFixRoad.call(this);
+            // });
+            //
+            // //get name of province selected
+            // $("[name='cat_province_from']").change(function () {
+            //    $("[name='cat_pro_from_name']").val($(this).find("option:selected").text());
+            // });
+            // $("[name='cat_province_to']").change(function () {
+            //     $("[name='cat_pro_to_name']").val($(this).find("option:selected").text());
+            // });
 
             Dropzone.autoDiscover = false;
             var dropzone = new Dropzone('#drop',{

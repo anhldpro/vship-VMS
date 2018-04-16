@@ -258,5 +258,9 @@ Route::post('upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController
 //----------------------------------VMS Road-------------------------------------------
 
 Route::get( 'road', 'Road\RoadController@index' )->name( 'vms.road.index' );
-Route::get( 'road/create', 'Road\RoadController@create' )->name( 'vms.road.create' );
+Route::get( 'road/create/{id}', 'Road\RoadController@create' )->name( 'vms.road.create' );
+Route::get( 'road/edit/{id}', 'Road\RoadController@edit' )->name( 'vms.road.edit' );
+Route::put( 'road/edit/{id}', 'Road\RoadController@update' )->name( 'vms.road.update' );
+Route::get( 'road/show/{id}', 'Road\RoadController@show' )->name( 'vms.road.show' );
+Route::delete( 'road/{id}', 'Road\RoadController@destroy' )->name( 'vms.road.destroy' );
 Route::post( 'road/create', 'Road\RoadController@store' )->name( 'vms.road.store' );

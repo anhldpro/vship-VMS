@@ -10,7 +10,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="btn-group" data-pg-collapsed>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">    Action
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Loại xe
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
@@ -28,7 +28,9 @@
                         <a href="#">Separated link</a>
                     </li>
                 </ul>
+
             </div>
+            <a class="btn btn-primary btn-success" href="{{route('vms.vehicle.create')}}" ><i class="fa fa-plus"></i> Thêm xe mới</a>
             {{--<h4 class=" pull-left">Lọc: </h4>--}}
         </div>
         <div class="panel-body">
@@ -56,17 +58,17 @@
                                     <a class="btn btn-primary" href="#"><i class="fa fa-edit"></i> Sửa</a>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-truck"></i> Lịch trình</a>
+                                    <a class="btn btn-primary" href="{{route('vms.vehicle.show', ['id'=>$item->id])}}"><i class="fa fa-truck"></i> Lịch trình</a>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary" href="#"><i class="fa fa-plus-circle"></i> Thêm lịch trình</a>
+                                    <a class="btn btn-primary" href="{{route('vms.road.create', ['id'=>$item->id])}}"><i class="fa fa-plus-circle"></i> Thêm lịch trình</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 @endforeach
-            </div>                                                                                                                                                                                                                                                                Basic panel example
+            </div>
         </div>
         </div>
     </div>
@@ -146,27 +148,7 @@
 @section('footer')
 <script type="text/javascript">
 $(document).ready(function(){
-    $("#search").autocomplete({
-        source: "{{ route('vms.vehicle.search') }}",
-            focus: function( event, ui ) {
-            //$( "#search" ).val( ui.item.title ); // uncomment this line if you want to select value to search box  
-            return false;
-        },
-        select: function( event, ui ) {
-            window.location.href = ui.item.url;
-        }
-    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
-        var inner_html = '<a href="' + item.url + '" ><div class="list_item_container"><div class="label"><h6><b>' + item.name + '</b></h6></div></div></a>';
-        return $( "<li></li>" )
-                .data( "item.autocomplete", item )
-                .append(inner_html)
-                .appendTo( ul );
-    };
+
 });
-</script>  
- <script>
-     function addBlog() {
-         window.location = "{{ route('vms.vehicle.create') }}"
-     }
- </script>
+</script>
 @endsection

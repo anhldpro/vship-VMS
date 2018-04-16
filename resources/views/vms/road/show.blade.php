@@ -5,7 +5,7 @@
     <div class="portlet light bordered">
         <div class="portlet-title">
             <div class="caption uppercase">
-                <i class="fa fa-book"></i> Thêm lịch trình
+                <i class="fa fa-book"></i> Chi tiết lịch trình
             </div>
 
         </div>
@@ -13,7 +13,7 @@
             <div class="panel-heading">
             </div>
             <div class="panel-body">
-                <form method="post" action="{{route('vms.road.store')}}" id="myForm" autocomplete="off">
+                <form method="post" action="{{route('vms.road.store')}}" id="myForm">
                     {{ csrf_field() }}
                     <input type="hidden" name="veh_id" value="{{$vehicle->id}}">
                     <div class="container">
@@ -47,17 +47,19 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label" for="formInput2686">Địa điểm đi</label>
-                                                        <input type="text" name="from_name" class="form-control controls" id="map-from" placeholder="Địa điểm đi">
+                                                        <input type="text" name="from_name" class="form-control controls" id="map-from" placeholder="Địa điểm đi" readonly
+                                                               value="{{$road->from_name}}">
                                                         <input type="hidden" name="from_pos">
-                                                        <input type="hidden" name="from_place_id">
+                                                        <input type="hidden" name="from_place_id" value="{{$road->from_place_id}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label" for="formInput2686">Địa điểm đến</label>
-                                                        <input type="text" name="to_name" class="form-control vs-map" id="map-to" placeholder="Địa điểm đến">
+                                                        <input type="text" name="to_name" class="form-control vs-map" id="map-to" placeholder="Địa điểm đến" readonly
+                                                               value="{{$road->to_name}}">
                                                         <input type="hidden" name="to_pos">
-                                                        <input type="hidden" name="to_place_id">
+                                                        <input type="hidden" name="to_place_id" value="{{$road->to_place_id}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -76,43 +78,50 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Thứ 2</label>
-                                                <input type="text" class="form-control road-time" id="formInput2966" name="mon" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput2966" name="mon" placeholder="HH:MM"
+                                                       value="{{$road->vehSched->mon}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Thứ 3</label>
-                                                <input type="text" class="form-control road-time" id="formInput2966" name="tue" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput2966" name="tue" placeholder="HH:MM"
+                                                       value="{{$road->vehSched->tue}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Thứ 4</label>
-                                                <input type="text" class="form-control road-time" id="formInput2966" name="wed" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput2966" name="wed" placeholder="HH:MM"
+                                                       value="{{$road->vehSched->wed}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Thứ 5</label>
-                                                <input type="text" class="form-control road-time" id="formInput2966" name="thu" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput2966" name="thu" placeholder="HH:MM"
+                                                       value="{{$road->vehSched->thu}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Thứ 6</label>
-                                                <input type="text" class="form-control road-time" id="formInput2966" name="fri" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput2966" name="fri" placeholder="HH:MM"
+                                                       value="{{$road->vehSched->fri}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Thứ 7</label>
-                                                <input type="text" class="form-control road-time" id="formInput2966" name="sat" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput2966" name="sat" placeholder="HH:MM"
+                                                       value="{{$road->vehSched->sat}}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="formInput2966">Chủ nhật</label>
-                                                <input type="text" class="form-control road-time" id="formInput111" name="sun" placeholder="HH:MM">
+                                                <input type="text" class="form-control road-time" id="formInput111" name="sun" placeholder="HH:MM" value="{{$road->vehSched->sun}}"
+                                                       readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -121,7 +130,7 @@
                         </div>
                         <div class="row" data-pg-collapsed>
                             <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary">Thêm lịch trình</button>
+                                <a href="{{route('vms.vehicle.show', ['id'=>$vehicle->id])}}" class="btn btn-primary">Quay lại</a>
                             </div>
                         </div>
                     </div>
@@ -159,13 +168,6 @@
                 if (minutes < 10) sMinutes = "0" + sMinutes;
 
             });
-
-            $('form').bind("keypress", function(e) {
-                if (e.keyCode == 13) {
-                    e.preventDefault();
-                    return false;
-                }
-            });
         });
     </script>
 
@@ -181,8 +183,11 @@
                 zoom: 13
             });
 
-            new AutocompleteDirectionsHandler(map);
+            var direction = new AutocompleteDirectionsHandler(map);
+            direction.originPlaceId = $("[name='from_place_id']").val();
+            direction.destinationPlaceId = $("[name='to_place_id']").val();
 
+            direction.route();
 
         }
 
