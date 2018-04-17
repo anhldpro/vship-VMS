@@ -26,7 +26,7 @@ class AVehicle extends Model
     /**
      * @var array
      */
-    protected $fillable = ['veh_type', 'veh_capacity', 'avatar', 'desc', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['account_id', 'veh_type', 'veh_capacity', 'avatar', 'desc', 'status', 'created_at', 'updated_at'];
 
     public function vehType(){
         return $this->belongsTo('App\Models\CatVehicle','veh_type');
@@ -34,6 +34,10 @@ class AVehicle extends Model
 
     public function vehCapacity(){
         return $this->belongsTo('App\Models\VehCapacity','veh_capacity');
+    }
+
+    public function account(){
+        return $this->belongsTo('App\Models\Account','account_id');
     }
 
 }

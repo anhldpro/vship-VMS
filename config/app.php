@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://vship.dev'),
 
     /*
     |--------------------------------------------------------------------------
@@ -162,32 +162,23 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-
-        /*
-         * Package Service Providers...
-         */
-        Laravel\Tinker\TinkerServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        // Mews\Captcha\CaptchaServiceProvider::class,
-        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
-        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        Yajra\Datatables\DatatablesServiceProvider::class,
-        Zizaco\Entrust\EntrustServiceProvider::class,
 
 
         Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
+
+        /*
+         * Upload image
+         */
+        Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -237,13 +228,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
-        // 'Captcha' => Mews\Captcha\Facades\Captcha::class,
-        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
     ],
 
 ];

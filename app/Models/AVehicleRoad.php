@@ -27,10 +27,18 @@ class AVehicleRoad extends Model
     /**
      * @var array
      */
-    protected $fillable = ['veh_id', 'from_pos', 'from_name', 'to_pos', 'to_name', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['veh_id', 'fix_road', 'from_pos', 'from_place_id', 'from_name', 'to_pos', 'to_place_id', 'to_name', 'status', 'created_at', 'updated_at'];
 
     public function vehicle(){
         return $this->belongsTo('App\Models\AVehicle','veh_id');
+    }
+
+    public function vehSched(){
+        return $this->hasOne('App\Models\AVehicleRoadSched', 'road_id');
+    }
+
+    public function getRoadByVehId($id){
+        return $this->where('veh_id', $id)->get();
     }
 
 }

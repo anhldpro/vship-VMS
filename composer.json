@@ -5,20 +5,13 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
-        "dimsav/laravel-translatable": "^7.3",
-        "doctrine/dbal": "^2.5",
-        "greggilbert/recaptcha": "dev-master",
+        "php": ">=5.5.9",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.3.0",
-        "mews/captcha": "^2.1",
-        "reliese/laravel": "^0.0.13",
-        "unisharp/laravel-filemanager": "^1.8",
-        "yajra/laravel-datatables-oracle": "^7.5",
-        "zizaco/entrust": "5.2.x-dev"
+        "intervention/image": "^2.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
         "fzaninotto/faker": "~1.4",
         "krlove/eloquent-model-generator": "^1.2",
         "mockery/mockery": "0.9.*",

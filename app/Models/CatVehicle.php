@@ -26,11 +26,17 @@ class CatVehicle extends Model
      * 
      * @var bool
      */
-    protected $incrementing = false;
+    public $incrementing = false;
 
     /**
      * @var array
      */
     protected $fillable = ['p_id', 'name', 'created_at', 'updated_at', 'status'];
+
+    public function getListActive(){
+        return $this->where('status', 'ACTV')->get();
+    }
+
+
 
 }

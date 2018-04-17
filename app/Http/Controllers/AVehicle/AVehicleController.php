@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\AVehicle;
 
+use App\Models\AVehicleRoad;
+use App\Models\CatPlace;
+use App\Models\CatVehicle;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use Illuminate\Support\Facades\Auth;
 use Log;
 use Illuminate\Support\Facades\Validator as Validator;
 use App\Models\AVehicle;
@@ -21,59 +26,115 @@ use File;
 
 class AVehicleController extends Controller
 {
-    public function admin_index()
+    public function index()
     {
-        $data = AVehicle::orderBy('created_at', 'DESC')->paginate(6);
-        return view('vms.vehicle.index', [
-            'data' => $data
-        ]);
+        $vehicles = AVehicle::orderBy('created_at', 'DESC')->paginate(6);
+        $this->viewData = array(
+            'vehicles' => $vehicles
+        );
+        return view('vms.vehicle.index', $this->viewData);
     }
 
 
     public function create()
     {
 
-        return view('vms.vehicle.create');
+        //get cat veh
+        $catVeh = new CatVehicle();
+        $vehicles = $catVeh->getListActive();
+
+        //get cat package
+
+        //get province
+        $catPlace = new CatPlace();
+        $provinces = $catPlace->getVnProvince();
+
+
+        $this->viewData = array(
+            'vehicles' => $vehicles,
+            'provinces' => $provinces
+        );
+
+        return view('vms.vehicle.create', $this->viewData);
     }
 
 
     public function store(Request $request)
     {
+
         $data = $request->all();
+//        dd($data);
         try {
             $rules = [
-                'name' => 'required',
-                'phone' => 'required',
-                'email' => 'required',
-                'address' => 'required'
+                'cat_veh' => 'required',
+//                'cat_province_from' => 'required',
+//                'cat_province_to' => 'required'
             ];
             $messages = [
-                'name.required' => 'Vui lòng nhập tên nhà xe!!!',
-                'phone.required' => 'Vui lòng nhập số điện thoại nhà xe!!!',
-                'email.required' => 'Vui lòng nhập email!!!',
-                'address.required' => 'Vui lòng nhập địa chỉ!!!',
-
+                'cat_veh.required' => 'Vui lòng chọn loại xe!!!',
+//                'cat_province_from.required' => 'Vui lòng chọn điểm khởi hành!!!',
+//                'cat_province_to.required' => 'Vui lòng chọn điểm đến!!!'
             ];
+            /*
+                $validate= Validator::make(
+                $request->all(),
+                [
+                    'title' =>'required|min:5|max:255',
+                    'content' =>'required',
+                ],
+
+                [
+                    'required'=>':attribute Không được để trống',
+                    'min'=>':attribute Không được nhỏ hơn :min',
+                    'max'=>':attribute Không được lớn hơn :max',
+                ],
+
+                [
+                    'title'=>'Tiêu đề',
+                    'content'=>'Nội dung',
+                ]
+
+                );
+                if($validate->fails()){
+                    return View('ValidationView')->withErrors($validate);
+                }
+             * */
 
             $validator = Validator::make($request->all(), $rules, $messages);
 
             if ($validator->fails()) {
-                return response()->json([
-                    'error' => true,
-                    'message' => $validator->errors(),
-                    'data' => $request->all()
-                ], 200);
+                return redirect(route('vms.vehicle.create'))
+                    ->withErrors($validator)
+                    ->withInput();
             } else {
+//                dd($data);
                 $avatar = $data['avatar'];
                 $name_img = $avatar->getClientOriginalName();
                 $data['avatar'] = $request->file('avatar')->storeAs('images/car', $name_img . '.jpg');
 
-                $car = AVehicle::create($data);
-                $id = DB::getPdo()->lastInsertId();
-                // dd($car_id);
-                // Image
+                /*
+                 * 1. save vehicle info
+                 */
+                $veh = new AVehicle;
+                $veh->account_id = Auth::id();
+                $veh->veh_type = $data['cat_veh'];
+                $veh->veh_capacity = $data['capacity'];
+                $veh->desc = $data['desc'];
+                $veh->avatar = $data['avatar'];
+                $veh->status = 'ACTV';
+
+
+
+                $veh->save();
+
+//                dd($veh->id);
+
+                /*
+                 * 2. save image of vehicle
+                 */
+                $id = $veh->id;
                 $_token = $data['_token'];
-                $temp_folder = 'stationImages/temp/' . $_token . '/';
+                $temp_folder = 'vship-img/temp/' . $_token . '/';
                 $real_folder = 'images/car/';
                 $img_info = isset($data['img_info']) ? $data['img_info'] : [];
                 // dd($img_info);
@@ -84,21 +145,28 @@ class AVehicleController extends Controller
 
                         if (file_exists($temp_folder . $value)) {
                             rename($temp_folder . $value, $real_folder . $value);
-                            DB::table('images')->insert([
-                                'type' => 2,
-                                'content_id' => $id,
-                                'url' => $real_folder . $value,
-                            ]);
+
+                            $vehImg = new Image;
+                            $vehImg->type = 2;
+                            $vehImg->content_id = $id;
+                            $vehImg->url = $real_folder . $value;
+
+                            $vehImg->save();
+
                         }
                     }
                 }
 
+                //remove temp image
+
                 array_map('unlink', glob($temp_folder . '*'));
                 $remove_temp_folder = is_dir($temp_folder) ? rmdir($temp_folder) : '';
-                $save = AVehicle::where('id', $id)->first();
+
+
+
                 Session::flash('success', 'Thêm mới thành công !!!!!');
 
-                return redirect(route('vms.vehicle.index'));
+                return redirect(route('vms.vehicle.show', ['id'=>$id]));
             }
         } catch (Exception $e) {
             \Log::info($e->getMessage());
@@ -110,7 +178,7 @@ class AVehicleController extends Controller
     {
         $id = $request->id;
         $name = $request->name;
-        $temp_folder = 'stationImages/temp/' . $request->_token . '/';
+        $temp_folder = 'vship-img/temp/' . $request->_token . '/';
         $real_folder = 'images/car/';
         $data = DB::table('images')
             ->where('url', $real_folder . $name)->get();
@@ -126,7 +194,7 @@ class AVehicleController extends Controller
         //Khoi tao
         $id = $request->id;
         $type = $request->type;
-        $temp_folder = public_path() . '/stationImages/temp/' . $id . '/' . $request->_token . '/';
+        $temp_folder = public_path() . '/vship-img/temp/' . $id . '/' . $request->_token . '/';
         $file = $request->file;
         $new_name = rand(1, 1000) . time();
         $ext = $file->getClientOriginalExtension();
@@ -138,11 +206,8 @@ class AVehicleController extends Controller
     public function getImages(Request $request)
     {
         $id = $request->id;
-        $data = DB::table('images')
-            ->where('content_id', $id)
-            ->where('type', 2)
-            ->get();
-        return $data;
+        $image = new Image();
+        return $image->getVehImgById($id);
     }
 
     public function edit($id)
@@ -257,12 +322,14 @@ class AVehicleController extends Controller
 
     public function show($id)
     {
-        $data = AVehicle::find($id);
+        $vehicle = AVehicle::find($id);
         // dd($data);
-        $datas = ImagesFiles::where('type', '2')->where('content_id', $id)->get();
+//        $datas = ImagesFiles::where('type', '2')->where('content_id', $id)->get();
+        $vehRoad = new AVehicleRoad;
+        $roads = $vehRoad->getRoadByVehId($id);
         $this->viewData = array(
-            'data' => $data,
-            'datas' => $datas
+            'vehicle' => $vehicle,
+            'roads' => $roads
         );
         return view('vms.vehicle.show', $this->viewData);
     }
@@ -314,7 +381,7 @@ class AVehicleController extends Controller
         }
     }
 
-    public function index($id)
+    public function index_old($id)
     {
         $hanoi = Itinerary::where('departPlace', 'Hà Nội')->paginate(10);
         $danang = Itinerary::where('departPlace', 'Đà Nẵng')->paginate(10);
